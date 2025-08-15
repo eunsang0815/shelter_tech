@@ -55,8 +55,14 @@ if agree:
     st.download_button("📝 Download Blank NDA Form", nda_data, file_name="ShelterTech_NDA.pdf")
 else:
     st.warning("Please agree to the NDA to access the product specification.")
-
 st.markdown("📧 For product inquiries: **eunsang.sheltertech@gmail.com**")
+
+st.markdown("""
+<div style='background-color:#f9f5e5; padding:10px; border-left:5px solid #f4c430;'>
+<b>Important Notice:</b>  
+We will be planning to introduce a <b>Mini Water Treatment System Machine Learning Model</b> that fits remote areas far away from a huge central water treatment plant.
+</div>
+""", unsafe_allow_html=True)
 
 st.subheader("🛠️ Tech Stack")
 st.markdown("""

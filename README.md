@@ -21,9 +21,11 @@ We also offer the **SB Brush System**, a hygiene and care solution for shelter e
 📧 For product inquiries: **eunsang.sheltertech@gmail.com**
 
 ## 🧬 Machine Learning Models
-- `return_rate_model.pkl`
-- `adoption_success_model.pkl`
-- `behavior_forecast_model.pkl`
+- [`return_rate_model`](./return_rate_model): Predicts likelihood of animal returns
+  
+- [`adoption_models`](./adoption_models): Forecasts adoption success
+  
+- [`behavior_forecast_model`](./behavior_forecast_model): (Coming soon) Predicts future behavior
 
 ## 🛠️ Tech Stack
 - Python, Streamlit, scikit-learn, pandas

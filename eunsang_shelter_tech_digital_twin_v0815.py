@@ -19,6 +19,10 @@ for animal in animals:
 
 # Header
 st.title("🧠 Digital Twin Lab")
+# Show README.md content
+with open("README.md", "r") as f:
+    readme_text = f.read()
+st.markdown(readme_text)
 st.markdown("Welcome to EunSang Shelter Tech AI")
 
 # Main Dashboard

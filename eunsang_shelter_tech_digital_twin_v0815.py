@@ -55,6 +55,26 @@ st.write("**Medical Recommendation:** Vet visit recommended next week")
 if st.toggle("🕶️ AR Mode"):
     st.success("AR Mode Activated (Simulated)")
 
+# SB Brush Product Section with NDA
+st.subheader("📦 SB Brush System")
+
+st.markdown("We offer the SB Brush System, a hygiene and care solution for shelter environments.")
+
+st.info("To protect our intellectual property, please agree to the NDA before downloading.")
+
+agree = st.checkbox("✅ I agree to the Non-Disclosure Agreement (NDA)")
+
+if agree:
+    with open("ProductSpecifiation_SB_Waterlox_Vet_Private_Use_Only_.pdf", "rb") as f:
+        pdf_data = f.read()
+    st.download_button("📄 Download SB Brush Specification", pdf_data, file_name="SB_Brush_Spec.pdf")
+
+    with open("NDA_ShelterTech.pdf", "rb") as nda:
+        nda_data = nda.read()
+    st.download_button("📝 Download Blank NDA Form", nda_data, file_name="ShelterTech_NDA.pdf")
+else:
+    st.warning("Please agree to the NDA to access the product specification.")
+
 # Footer
 st.markdown("---")
 st.caption("Powered by Streamlit + EunSang Shelter Tech AI")

@@ -79,3 +79,7 @@ else:
 st.markdown("---")
 st.caption("Powered by Streamlit + EunSang Shelter Tech AI")
 
+# Footer
+st.markdown("---")
+st.caption("Powered by Streamlit + EunSang Shelter Tech AI")
+

@@ -21,9 +21,14 @@ if user_country not in allowed_countries:
     st.stop()
 
 # ✅ Streamlit UI setup
-st.set_page_config(page_title="ShelterTech NDA Portal", page_icon="📄")
+st.set_page_config(page_title="ShelterTech NDA Portal", page_icon="📄", layout="centered")
 st.title("📄 ShelterTech Document Access Portal")
-st.markdown("Please fill out the form below to access the SB Brush Specification Sheet. Access is limited to users in the **United States**, **Canada**, and **United Kingdom**.")
+
+st.markdown("""
+Welcome to the ShelterTech NDA Portal.  
+Please fill out the form below to access the SB Brush Specification Sheet.  
+Access is limited to users in the **United States**, **Canada**, **United Kingdom**, and **South Korea**.
+""")
 
 # 📝 Form
 with st.form("nda_form"):
@@ -33,6 +38,7 @@ with st.form("nda_form"):
     address = st.text_area("Address")
     email = st.text_input("Email")
     phone = st.text_input("Phone Number")
+    uploaded_file = st.file_uploader("📎 Upload your signed NDA (PDF only)", type=["pdf"])
     submitted = st.form_submit_button("Submit")
 
 if submitted:
@@ -40,6 +46,10 @@ if submitted:
     st.markdown("[📄 Download SB Specification Sheet](https://github.com/eunsang0815/shelter_tech/raw/main/return_rate_model/ProductSpecifiation_SB_Waterlox_Vet_Private_Use_Only_.pdf)")
     st.markdown("[📄 Download NDA Agreement](https://github.com/eunsang0815/shelter_tech/raw/main/return_rate_model/NDA_ShelterTech.pdf)")
     st.info("Please complete the NDA and email it to: **eunsang.sheltertech@gmail.com**. Once verified, we’ll send you the Business Plan and full specifications.")
+
+    if uploaded_file:
+        st.success("✅ File uploaded successfully!")
+        st.write("Filename:", uploaded_file.name)
 
     # 📊 Log to Google Sheets
     try:

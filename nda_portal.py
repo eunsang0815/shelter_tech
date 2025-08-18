@@ -19,18 +19,13 @@ user_country = get_user_country()
 if user_country not in allowed_countries:
     st.warning(f"Access restricted. Your country ({user_country}) is not authorized.")
     st.stop()
+
+# ✅ Streamlit UI setup
 st.set_page_config(page_title="ShelterTech NDA Portal", page_icon="📄")
-
 st.title("📄 ShelterTech Document Access Portal")
-st.markdown("Please fill out the form below to access the SB Brush Specification Sheet. Access is limited to users in the **United States** and **Canada**.")
+st.markdown("Please fill out the form below to access the SB Brush Specification Sheet. Access is limited to users in the **United States**, **Canada**, and **United Kingdom**.")
 
-# Country restriction
-country = st.selectbox("Country", ["Select", "United States", "Canada"])
-if country not in ["United States", "Canada"]:
-    st.warning("Access is limited to users in the US and Canada.")
-    st.stop()
-
-# Form
+# 📝 Form
 with st.form("nda_form"):
     name = st.text_input("Full Name")
     org = st.text_input("Organization")
@@ -46,13 +41,13 @@ if submitted:
     st.markdown("[📄 Download NDA Agreement](https://github.com/eunsang0815/shelter_tech/raw/main/return_rate_model/NDA_ShelterTech.pdf)")
     st.info("Please complete the NDA and email it to: **eunsang.sheltertech@gmail.com**. Once verified, we’ll send you the Business Plan and full specifications.")
 
-    # Log to Google Sheets
+    # 📊 Log to Google Sheets
     try:
         scope = ["https://spreadsheets.google.com/feeds", "https://www.googleapis.com/auth/drive"]
         creds = ServiceAccountCredentials.from_json_keyfile_name("google_sheets_secret.json", scope)
         client = gspread.authorize(creds)
         sheet = client.open("ShelterTech NDA Submissions").sheet1
-        sheet.append_row([str(datetime.datetime.now()), name, org, job, address, email, phone, country])
+        sheet.append_row([str(datetime.datetime.now()), name, org, job, address, email, phone, user_country])
     except Exception as e:
         st.warning("⚠️ Submission logged locally, but Google Sheets logging failed.")
         st.text(str(e))

@@ -2,7 +2,22 @@ import streamlit as st
 import datetime
 import gspread
 from oauth2client.service_account import ServiceAccountCredentials
+import requests
 
+def get_user_country():
+    try:
+        response = requests.get("https://ipapi.co/json/")
+        data = response.json()
+        return data.get("country_name", "Unknown")
+    except:
+        return "Unknown"
+
+allowed_countries = ["United States", "Canada", "United Kingdom"]
+user_country = get_user_country()
+
+if user_country not in allowed_countries:
+    st.warning(f"Access restricted. Your country ({user_country}) is not authorized.")
+    st.stop()
 st.set_page_config(page_title="ShelterTech NDA Portal", page_icon="📄")
 
 st.title("📄 ShelterTech Document Access Portal")
@@ -40,3 +55,4 @@ if submitted:
     except Exception as e:
         st.warning("⚠️ Submission logged locally, but Google Sheets logging failed.")
         st.text(str(e))
+

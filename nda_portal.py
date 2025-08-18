@@ -13,7 +13,7 @@ def get_user_country():
     except:
         return "Unknown"
 
-allowed_countries = ["United States", "Canada", "United Kingdom"]
+allowed_countries = ["United States", "Canada", "United Kingdom", "South Korea"]
 user_country = get_user_country()
 
 if user_country not in allowed_countries:
@@ -51,3 +51,4 @@ if submitted:
     except Exception as e:
         st.warning("⚠️ Submission logged locally, but Google Sheets logging failed.")
         st.text(str(e))
+

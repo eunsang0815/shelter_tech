@@ -4,6 +4,7 @@ import gspread
 from oauth2client.service_account import ServiceAccountCredentials
 import requests
 
+# 🌍 Country restriction using IP geolocation
 def get_user_country():
     try:
         response = requests.get("https://ipapi.co/json/")
@@ -55,4 +56,3 @@ if submitted:
     except Exception as e:
         st.warning("⚠️ Submission logged locally, but Google Sheets logging failed.")
         st.text(str(e))
-

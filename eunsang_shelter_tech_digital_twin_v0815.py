@@ -45,6 +45,11 @@ st.subheader("📦 SB Brush System")
 st.markdown("We offer the SB Brush System, a hygiene and care solution for shelter environments.")
 st.info("To protect our intellectual property, please agree to the NDA before downloading.")
 agree = st.checkbox("✅ I agree to the Non-Disclosure Agreement (NDA)")
+
+st.markdown(
+    "[📄 NDA_ShelterTech.pdf 보기](https://eunsang0815.github.io/shelter_tech/NDA_ShelterTech.pdf)",
+    unsafe_allow_html=True
+)
 if agree:
     with open("ProductSpecifiation_SB_Waterlox_Vet_Private_Use_Only_.pdf", "rb") as f:
         pdf_data = f.read()

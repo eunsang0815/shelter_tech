@@ -1,7 +1,4 @@
 import streamlit as st
-import datetime
-import gspread
-from oauth2client.service_account import ServiceAccountCredentials
 import requests
 
 # 🌍 Country restriction using IP geolocation
@@ -13,42 +10,29 @@ def get_user_country():
     except:
         return "Unknown"
 
-allowed_countries = ["United States", "Canada", "United Kingdom", "South Korea"]
-user_country = get_user_country()
+# ✅ Page setup
+st.set_page_config(page_title="NDA Access Portal", page_icon="🔐", layout="centered")
+st.title("🔐 NDA Access Request Portal")
 
-if user_country not in allowed_countries:
-    st.set_page_config(page_title="Access Restricted", layout="centered")
-    st.warning(f"Access restricted. Your country ({user_country}) is not authorized.")
-    st.stop()
+st.markdown("""
+Welcome to the NDA access portal for Shelter Tech.  
+Please fill out the form below. Access is restricted to users in **United States**, **United Kingdom**, and **Canada**.
+""")
 
-# ✅ Streamlit UI setup
-st.set_page_config(page_title="ShelterTech NDA Portal", page_icon="📄", layout="centered")
-st.title("📄 ShelterTech Document Access Portal")
-st.markdown("Please fill out the form below to access the SB Brush Specification Sheet. Access is limited to users in the **United States**, **Canada**, **United Kingdom**, and **South Korea**.")
-
-# 📝 Form
+# 📝 NDA Request Form
 with st.form("nda_form"):
     name = st.text_input("Full Name")
-    org = st.text_input("Organization")
-    job = st.text_input("Occupation")
-    address = st.text_area("Address")
-    email = st.text_input("Email")
-    phone = st.text_input("Phone Number")
+    email = st.text_input("Email Address")
+    country = st.selectbox("Country", ["Select", "United States", "United Kingdom", "Canada", "Other"])
     submitted = st.form_submit_button("Submit")
 
+# 🚦 Submission Logic
 if submitted:
-    st.success("✅ Thank you! You may now download the SB Specification Sheet and NDA Agreement.")
-    st.markdown("[📄 Download SB Specification Sheet](https://github.com/eunsang0815/shelter_tech/raw/main/return_rate_model/ProductSpecifiation_SB_Waterlox_Vet_Private_Use_Only_.pdf)")
-    st.markdown("[📄 Download NDA Agreement](https://github.com/eunsang0815/shelter_tech/raw/main/return_rate_model/NDA_ShelterTech.pdf)")
-    st.info("Please complete the NDA and email it to: **eunsang.sheltertech@gmail.com**. Once verified, we’ll send you the Business Plan and full specifications.")
-
-    # 📊 Log to Google Sheets
-    try:
-        scope = ["https://spreadsheets.google.com/feeds", "https://www.googleapis.com/auth/drive"]
-        creds = ServiceAccountCredentials.from_json_keyfile_name("google_sheets_secret.json", scope)
-        client = gspread.authorize(creds)
-        sheet = client.open("ShelterTech NDA Submissions").sheet1
-        sheet.append_row([str(datetime.datetime.now()), name, org, job, address, email, phone, user_country])
-    except Exception as e:
-        st.warning("⚠️ Submission logged locally, but Google Sheets logging failed.")
-        st.text(str(e))
+    if country in ["United States", "United Kingdom", "Canada"]:
+        st.success(f"✅ Access granted, {name}. You may download the NDA below.")
+        st.markdown("[📄 Download NDA_ShelterTech.pdf](https://eunsang0815.github.io/shelter_tech/NDA_ShelterTech.pdf)")
+        st.info("Please complete the NDA and email it to: **eunsang.sheltertech@gmail.com**")
+    elif country == "Select":
+        st.warning("⚠️ Please select your country.")
+    else:
+        st.error("❌ Access denied. NDA is only available to users in US, UK, or Canada.")

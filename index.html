@@ -12,12 +12,36 @@
       background-color: #f4f4f4;
       color: #333;
     }
+
+    /* 헤더 스타일 */
     header {
       background-color: #2c3e50;
       color: white;
-      padding: 40px 20px;
+      padding: 120px 20px;  /* 기존 40px → 120px (3배 확대) */
       text-align: center;
     }
+
+    /* 헤더 타이틀 */
+    header h1 {
+      font-size: 7.5em; /* 기존 대비 약 3배 확대 */
+      margin: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 20px; /* 발바닥과 텍스트 사이 간격 */
+    }
+
+    /* 발바닥 아이콘 크게 */
+    .paw-icon {
+      font-size: 3em; /* 발바닥 아이콘 크기 확대 */
+    }
+
+    /* 서브타이틀 */
+    header p {
+      font-size: 36px; /* 기존 약 16px → 36px로 확대 */
+      margin-top: 20px;
+    }
+
     section {
       padding: 40px 20px;
       max-width: 800px;
@@ -27,9 +51,11 @@
       border-radius: 8px;
       box-shadow: 0 0 10px rgba(0,0,0,0.1);
     }
-    h1, h2 {
+
+    h2 {
       color: #2c3e50;
     }
+
     input, textarea, select, button {
       width: 100%;
       padding: 12px;
@@ -39,25 +65,30 @@
       border-radius: 4px;
       box-sizing: border-box;
     }
+
     button {
       background-color: #2980b9;
       color: white;
       border: none;
       cursor: pointer;
     }
+
     button:hover {
       background-color: #1f6391;
     }
+
     footer {
       text-align: center;
       padding: 20px;
-      font-size: 1.9em;
+      font-size: 1.2em;
       color: #777;
     }
+
     a {
       color: #2980b9;
       text-decoration: none;
     }
+
     a:hover {
       text-decoration: underline;
     }
@@ -66,7 +97,10 @@
 <body>
 
   <header>
-    <h1>🐾 EunSang Shelter Tech – Digital Twin Lab</h1>
+    <h1>
+      <span class="paw-icon">🐾</span>
+      EunSang Shelter Tech – Digital Twin Lab
+    </h1>
     <p>AI, AR/VR, and biometric data for next-generation animal welfare</p>
   </header>
 

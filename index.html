@@ -45,6 +45,7 @@
 
     .paw-icon {
       font-size: 2em;
+      color: #2c3e50;
     }
 
     header p {
@@ -74,6 +75,7 @@
       gap: 15px;
       flex-wrap: wrap;
       margin: 20px 0;
+      justify-content: flex-start; /* 왼쪽 정렬 */
     }
 
     .btn {
@@ -95,11 +97,11 @@
     }
 
     .btn-return {
-      background-color: #e74c3c; /* 빨강 */
+      background-color: #2980b9; /* 파란색 */
     }
 
     .btn-adoption {
-      background-color: #e67e22; /* 주황 */
+      background-color: #2c3e50; /* 발바닥 아이콘색과 일치 */
     }
 
     /* === 입력 & 버튼 === */
@@ -164,6 +166,7 @@
       }
       .model-buttons {
         flex-direction: column;
+        align-items: flex-start;
       }
     }
   </style>
@@ -191,13 +194,13 @@
       <a href="https://returnratemodel-6i2mvrlijxb3mw6eopqz2k.streamlit.app/"
          target="_blank" rel="noopener noreferrer"
          class="btn btn-return">
-        🔴 Return Rate Prediction
+        🔵 Return Rate Prediction
       </a>
 
       <a href="https://adoptionmodels-ujdmpxfvyqnjqk7x4uux2o.streamlit.app/"
          target="_blank" rel="noopener noreferrer"
          class="btn btn-adoption">
-        🟠 Adoption Rate Prediction
+        ⚫ Adoption Rate Prediction
       </a>
     </div>
 
@@ -248,33 +251,4 @@
       <input type="tel" id="phone" name="phone" />
 
       <p><strong>📎 NDA file upload:</strong> Please send your signed NDA to  
-      <a href="mailto:eunsang.sheltertech@gmail.com">eunsang.sheltertech@gmail.com</a></p>
-
-      <button type="submit">Submit</button>
-    </form>
-  </section>
-
-  <!-- 푸터 -->
-  <footer>
-    <p>
-      Contact: <a href="mailto:eunsang.sheltertech@gmail.com">eunsang.sheltertech@gmail.com</a>  
-      | Tel: +82 10 3282 5822
-    </p>
-
-    <p>
-      <a href="https://www.facebook.com/waterloxusa" target="_blank" class="facebook-link">
-        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#3b5998" viewBox="0 0 24 24">
-          <path d="M22.675 0h-21.35C.597 0 0 .597 0 1.333v21.333C0 23.403.597 24 1.325 24H12.82V14.706h-3.13v-3.622h3.13V8.413c0-3.1 1.894-4.788 4.659-4.788 1.325 0 2.463.097 2.794.14v3.243h-1.916c-1.504 0-1.794.714-1.794 1.762v2.312h3.587l-.467 3.622h-3.12V24h6.116C23.403 24 24 23.403 24 22.667V1.333C24 .597 23.403 0 22.675 0z"/>
-        </svg>
-        WaterloxUSA
-      </a>
-    </p>
-
-    <p style="margin-top: 8px; font-size: 14px; color: #777;">
-      © 2025 EunSang Shelter Technology
-    </p>
-  </footer>
-
-</body>
-</html>
-
+      <a href="mailto:eunsang.sheltertech@gmail.com">eunsang.sheltertech@gmail

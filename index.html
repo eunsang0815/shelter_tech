@@ -98,9 +98,26 @@
       font-size: 0.95em;
       color: #777;
       margin-top: 30px;
+      background-color: #f8f9fa;
+      border-top: 1px solid #ddd;
     }
 
-    /* === 반응형 디자인 === */
+    /* 페이스북 아이콘 + 텍스트 스타일 */
+    .facebook-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      text-decoration: none;
+      color: #3b5998;
+      font-weight: bold;
+      margin-top: 8px;
+      transition: opacity 0.3s ease;
+    }
+    .facebook-link:hover {
+      opacity: 0.75;
+    }
+
+    /* 반응형 디자인 */
     @media (max-width: 600px) {
       header h1 {
         font-size: 1.3em;
@@ -123,7 +140,7 @@
       <span class="paw-icon">🐾</span>
       EunSang Shelter Tech – Digital Twin Lab
     </h1>
-    <p>AI, AR/VR, and biometric data for next-generation animal welfare</p>
+    <p>AI (ML), AR/VR, and Biometric data & Physical Products nearby your real life for next-generation Animal welfare</p>
   </header>
 
   <!-- 기능 섹션 -->
@@ -131,18 +148,19 @@
     <h2>🚀 Key Features</h2>
     <ul>
       <li><strong>Digital Twin Dashboard</strong>: Real-time health and behavior insights</li>
-      <li><strong>Return Rate Prediction</strong>: ML model to forecast adoption success</li>
+      <li><strong>Return Rate Prediction</strong>: ML model to forecast return to home safely (Rescue Org.)</li>
+      <li><strong>Adoption Rate Prediction</strong>: ML model to predict successful adoption (Shelter Org.)</li>
       <li><strong>AR Mode</strong>: Visualize animals in your space</li>
-      <li><strong>Vitals Monitor</strong>: Heart rate, temperature, activity level</li>
+      <li><strong>Vitals Monitor</strong>: Heart rate, temperature, activity level (Veterinarians)</li>
       <li><strong>AI Insights</strong>: Mood, diet, and medical recommendations</li>
     </ul>
   </section>
 
   <!-- SB Brush System -->
   <section>
-    <h2>📦 SB Brush System</h2>
-    <p>A hygiene and care solution for shelter environments.</p>
-    <p><a href="SB_Brush_Specification.pdf" target="_blank">📄 Download SB Brush Specification PDF</a></p>
+    <h2>📦 SB Brush System & EunSang Waterlox Water Technology</h2>
+    <p>A hygiene & care solution for hairy animals and shelter & rescue environments.</p>
+    <p><a href="SB_Brush_Specification.pdf" target="_blank">📄 Download SB Brush Specification PDF (USA, Canada and UK Professionals only)</a></p>
   </section>
 
   <!-- NDA 제출 -->
@@ -175,8 +193,26 @@
 
   <!-- 푸터 -->
   <footer>
-    Contact: <a href="mailto:eunsang.sheltertech@gmail.com">eunsang.sheltertech@gmail.com</a>  
-    | © 2025 EunSang Shelter Tech
+    <p>
+      Contact: <a href="mailto:eunsang.sheltertech@gmail.com">eunsang.sheltertech@gmail.com</a>  
+      | Tel: +82 10 3282 5822
+    </p>
+
+    <!-- Facebook 링크 -->
+    <p>
+      <a href="https://www.facebook.com/waterloxusa" target="_blank" class="facebook-link">
+        <!-- 페이스북 로고 (SVG) -->
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#3b5998" viewBox="0 0 24 24">
+          <path d="M22.675 0h-21.35C.597 0 0 .597 0 1.333v21.333C0 23.403.597 24 1.325 24H12.82V14.706h-3.13v-3.622h3.13V8.413c0-3.1 1.894-4.788 4.659-4.788 1.325 0 2.463.097 2.794.14v3.243h-1.916c-1.504 0-1.794.714-1.794 1.762v2.312h3.587l-.467 3.622h-3.12V24h6.116C23.403 24 24 23.403 24 22.667V1.333C24 .597 23.403 0 22.675 0z"/>
+        </svg>
+        WaterloxUSA
+      </a>
+    </p>
+
+    <p style="margin-top: 8px; font-size: 14px; color: #777;">
+      © 2025 EunSang Shelter Technology
+    </p>
   </footer>
+
 </body>
 </html>

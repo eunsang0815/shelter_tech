@@ -5,65 +5,79 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>EunSang Shelter Tech – Digital Twin Lab</title>
   <style>
+    /* === 공통 스타일 === */
     body {
       font-family: 'Segoe UI', sans-serif;
       margin: 0;
       padding: 0;
       background-color: #f4f4f4;
       color: #333;
+      line-height: 1.6;
     }
 
-    /* 헤더 스타일 */
+    a {
+      color: #2980b9;
+      text-decoration: none;
+      transition: color 0.2s ease-in-out;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+
+    /* === 헤더 === */
     header {
       background-color: #2c3e50;
       color: white;
-      padding: 40px 20px;  /* 원래 값 유지 */
+      padding: 60px 20px;
       text-align: center;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
     }
 
-    /* 헤더 타이틀 (폰트 크기 감소) */
     header h1 {
-      font-size: 2.5em;  /* 이전 대비 약 1/3 크기로 조정 */
+      font-size: 1.5em; /* 최종 안정적인 크기 */
       margin: 0;
       display: flex;
       align-items: center;
       justify-content: center;
       gap: 10px;
+      flex-wrap: wrap;
     }
 
-    /* 발바닥 아이콘 크기 적절히 */
     .paw-icon {
-      font-size: 1.5em;  /* 크기 조정 */
+      font-size: 1em; /* 발바닥 아이콘 크기 균형 */
     }
 
-    /* 서브타이틀 */
     header p {
-      font-size: 16px;  /* 일반 브라우저 기본 크기 유지 */
-      margin-top: 10px;
+      font-size: 15px;
+      margin-top: 8px;
+      opacity: 0.85;
     }
 
+    /* === 메인 섹션 === */
     section {
       padding: 40px 20px;
       max-width: 800px;
-      margin: auto;
+      margin: 30px auto;
       background-color: white;
-      margin-top: 40px;
       border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
     }
 
     h2 {
       color: #2c3e50;
+      margin-bottom: 15px;
     }
 
+    /* === 입력 & 버튼 === */
     input, textarea, select, button {
       width: 100%;
       padding: 12px;
       margin-top: 8px;
       margin-bottom: 20px;
       border: 1px solid #ccc;
-      border-radius: 4px;
+      border-radius: 6px;
       box-sizing: border-box;
+      font-size: 14px;
     }
 
     button {
@@ -71,30 +85,39 @@
       color: white;
       border: none;
       cursor: pointer;
+      transition: background-color 0.25s ease;
     }
-
     button:hover {
       background-color: #1f6391;
     }
 
+    /* === 푸터 === */
     footer {
       text-align: center;
       padding: 20px;
-      font-size: 1em;
+      font-size: 0.95em;
       color: #777;
+      margin-top: 30px;
     }
 
-    a {
-      color: #2980b9;
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
+    /* === 반응형 디자인 === */
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 1.3em;
+        gap: 5px;
+      }
+      header p {
+        font-size: 14px;
+      }
+      section {
+        padding: 25px 15px;
+      }
     }
   </style>
 </head>
 <body>
+
+  <!-- 헤더 -->
   <header>
     <h1>
       <span class="paw-icon">🐾</span>
@@ -103,6 +126,7 @@
     <p>AI, AR/VR, and biometric data for next-generation animal welfare</p>
   </header>
 
+  <!-- 기능 섹션 -->
   <section>
     <h2>🚀 Key Features</h2>
     <ul>
@@ -114,15 +138,18 @@
     </ul>
   </section>
 
+  <!-- SB Brush System -->
   <section>
     <h2>📦 SB Brush System</h2>
     <p>A hygiene and care solution for shelter environments.</p>
     <p><a href="SB_Brush_Specification.pdf" target="_blank">📄 Download SB Brush Specification PDF</a></p>
   </section>
 
+  <!-- NDA 제출 -->
   <section>
     <h2>🔒 NDA Submission Portal</h2>
     <p>This system contains proprietary technologies. NDA submission is required for access.</p>
+
     <form action="https://formspree.io/f/your-form-id" method="POST">
       <label for="name">Full Name</label>
       <input type="text" id="name" name="name" required />
@@ -146,6 +173,7 @@
     </form>
   </section>
 
+  <!-- 푸터 -->
   <footer>
     Contact: <a href="mailto:eunsang.sheltertech@gmail.com">eunsang.sheltertech@gmail.com</a>  
     | © 2025 EunSang Shelter Tech

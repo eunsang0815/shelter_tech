@@ -68,6 +68,40 @@
       margin-bottom: 15px;
     }
 
+    /* === 버튼 스타일 === */
+    .model-buttons {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+      margin: 20px 0;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 24px;
+      font-size: 1.1em;
+      font-weight: bold;
+      border-radius: 8px;
+      color: #fff;
+      text-align: center;
+      text-decoration: none;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+    }
+
+    .btn-return {
+      background-color: #e74c3c; /* 빨강 */
+    }
+
+    .btn-adoption {
+      background-color: #e67e22; /* 주황 */
+    }
+
     /* === 입력 & 버튼 === */
     input, textarea, select, button {
       width: 100%;
@@ -128,6 +162,9 @@
       section {
         padding: 25px 15px;
       }
+      .model-buttons {
+        flex-direction: column;
+      }
     }
   </style>
 </head>
@@ -147,29 +184,24 @@
     <h2>🚀 Key Features</h2>
     <ul>
       <li><strong>Digital Twin Dashboard</strong>: Real-time health and behavior insights</li>
-      
-      <li>
-        <strong>
-          <a href="https://returnratemodel-6i2mvrlijxb3mw6eopqz2k.streamlit.app/"
-             target="_blank" rel="noopener noreferrer"
-             style="font-size:1.2em; color:red; font-weight:bold;">
-            Return Rate Prediction
-          </a>
-        </strong>
-        : ML model to forecast return to home safely (Rescue Org.)
-      </li>
+    </ul>
 
-      <li>
-        <strong>
-          <a href="https://adoptionmodels-ujdmpxfvyqnjqk7x4uux2o.streamlit.app/"
-             target="_blank" rel="noopener noreferrer"
-             style="font-size:1.2em; color:orange; font-weight:bold;">
-            Adoption Rate Prediction
-          </a>
-        </strong>
-        : ML model to predict successful adoption (Shelter Org.)
-      </li>
+    <!-- 모델 버튼 -->
+    <div class="model-buttons">
+      <a href="https://returnratemodel-6i2mvrlijxb3mw6eopqz2k.streamlit.app/"
+         target="_blank" rel="noopener noreferrer"
+         class="btn btn-return">
+        🔴 Return Rate Prediction
+      </a>
 
+      <a href="https://adoptionmodels-ujdmpxfvyqnjqk7x4uux2o.streamlit.app/"
+         target="_blank" rel="noopener noreferrer"
+         class="btn btn-adoption">
+        🟠 Adoption Rate Prediction
+      </a>
+    </div>
+
+    <ul>
       <li><strong>AR Mode</strong>: Visualize animals in your space</li>
       <li><strong>Vitals Monitor</strong>: Heart rate, temperature, activity level (Veterinarians)</li>
       <li><strong>AI Insights</strong>: Mood, diet, and medical recommendations</li>
@@ -245,3 +277,4 @@
 
 </body>
 </html>
+

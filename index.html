@@ -105,6 +105,21 @@
       background-color: #e67e22; /* 주황색 */
     }
 
+    /* === 쇼핑몰 링크 카드 스타일 === */
+    .shop-card {
+      background-color: #f8f9fa;
+      border-left: 5px solid #e67e22;
+      padding: 20px;
+      margin: 20px 0;
+      border-radius: 0 8px 8px 0;
+    }
+
+    .shop-card p {
+      margin: 0 0 12px 0;
+      font-size: 1.1em;
+      font-weight: 500;
+    }
+
     /* === 입력 & 버튼 === */
     input, textarea, select, button {
       width: 100%;
@@ -217,18 +232,23 @@
     </ul>
   </section>
 
-  <!-- SB Brush System -->
+  <!-- SB Brush System & 쇼핑몰 안내 단일 통합 섹션 -->
   <section>
     <h2>📦 SB Brush System & EunSang Waterlox Water Technology</h2>
-    <p>A hygiene & care solution for hairy animals and shelter & rescue environments.</p>
-    <p><a href="SB_Brush_Specification.pdf" target="_blank">📄 Download SB Brush Specification PDF (USA, Canada and UK Professionals only)</a></p>
-  </section>
+    
+    <!-- 수정 및 다듬어진 새로운 브랜드 메시지 구역 -->
+    <div class="shop-card">
+      <p>Smart hygiene for happier, healthier pets—and faster adoption. Find yours today.</p>
+      <a href="https://pethygiene.shop/" target="_blank" rel="noopener noreferrer" style="font-weight: bold; font-size: 1.05em; color: #e67e22;">
+        👉 Shop : https://pethygiene.shop/
+      </a>
+    </div>
 
-  <!-- Waterlox 섹션 수정: 유튜브 링크로 교체 -->
-  <section>
-    <h2>📦 SB Brush System & EunSang Waterlox Water Technology</h2>
-    <p>
-      A hygiene & care solution for hairy animals and shelter & rescue environments.<br>
+    <!-- 기존 자료 및 미디어 링크 유지 -->
+    <p style="margin-top: 25px; font-size: 0.95em;">
+      <a href="SB_Brush_Specification.pdf" target="_blank">📄 Download SB Brush Specification PDF (USA, Canada and UK Professionals only)</a>
+    </p>
+    <p style="font-size: 0.95em;">
       <a href="https://youtu.be/mqaXuaAUni0" target="_blank" style="color:#2980b9; font-weight: bold;">
         📺 Watch SB Brush System on YouTube
       </a>

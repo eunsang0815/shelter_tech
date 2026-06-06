@@ -72,7 +72,7 @@
       max-width: 800px;
       margin: 40px auto;
       background-color: white;
-      border-radius: 16px; /* 더 부드러운 라운딩 */
+      border-radius: 16px; /* 부드러운 라운딩 */
       box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03), 0 0 0 1px rgba(0,0,0,0.03);
     }
 
@@ -95,7 +95,7 @@
       margin-bottom: 12px;
     }
 
-    /* === 입체적 다이내믹 버튼 스케일링 (3개 배치 최적화) === */
+    /* === 입체적 다이내믹 버튼 스케일링 === */
     .model-buttons {
       display: flex;
       gap: 12px;
@@ -133,32 +133,59 @@
     }
 
     .btn-matching {
-      background: linear-gradient(135deg, #10b981, #059669); /* 프리미엄 그린 톤 */
+      background: linear-gradient(135deg, #10b981, #059669);
     }
 
-    /* === 쇼핑몰 링크 카드 스타일 고도화 === */
+    /* === ✨ [디자인 업그레이드] 쇼핑몰 링크 배너 박스 === */
     .shop-card {
-      background: linear-gradient(to right, #fdf8f6, #fff);
-      border-left: 5px solid #ea580c;
-      padding: 24px;
-      margin: 25px 0 20px 0;
-      border-radius: 4px 12px 12px 4px;
-      box-shadow: 0 2px 8px rgba(234, 88, 12, 0.05);
+      background: linear-gradient(135deg, #fdf8f6 0%, #fff7ed 100%);
+      border: 1px solid #ffedd5;
+      border-left: 6px solid #ea580c; /* 브랜드 포인트 오렌지 두껍게 */
+      padding: 26px;
+      margin: 25px 0 25px 0;
+      border-radius: 6px 16px 16px 6px;
+      box-shadow: 0 4px 15px rgba(234, 88, 12, 0.04);
     }
 
     .shop-card p {
-      margin: 0 0 14px 0;
+      margin: 0 0 16px 0;
       font-size: 1.15em;
       font-weight: 600;
-      color: #334155;
+      color: #475569;
     }
 
-    /* === 유튜브 임베드 컨테이너 고도화 === */
+    /* 원어민들이 가장 선호하는 고급 UI 형태의 대형 링크 스타일 */
+    .back-to-shop-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 1.85em; /* 시원하고 큼직한 폰트 크기 */
+      font-weight: 800;   /* 볼드 강조 */
+      color: #0f172a;     /* 고급스러운 딥 네이비 */
+      text-decoration: none;
+      transition: transform 0.2s ease, opacity 0.2s ease;
+    }
+    
+    /* 마우스를 올렸을 때 오른쪽으로 살짝 움직이는 세련된 인터랙션 효과 */
+    .back-to-shop-link:hover {
+      transform: translateX(4px);
+      color: #1e293b;
+    }
+    
+    .back-to-shop-link .url-text {
+      color: #c2410c;     /* 신뢰감을 주는 브라운-오렌지 톤 주소 표시 */
+      font-weight: 700;
+      text-decoration: underline;
+      text-underline-offset: 4px;
+      text-decoration-thickness: 2px;
+    }
+
+    /* === 유튜브 임베드 컨테이너 === */
     .youtube-container {
       margin: 30px auto;
       text-align: center;
       position: relative;
-      padding-bottom: 56.25%; /* 16:9 비율 유지 */
+      padding-bottom: 56.25%; /* 16:9 비율 */
       height: 0;
       overflow: hidden;
       border-radius: 12px;
@@ -174,7 +201,7 @@
       border: 0;
     }
 
-    /* === 입력 폼 & NDA 버튼 고급화 === */
+    /* === 입력 폼 & NDA 버튼 === */
     input, textarea, select, button {
       width: 100%;
       padding: 14px;
@@ -217,7 +244,7 @@
       transform: translateY(-1px);
     }
 
-    /* === 푸터 및 SNS 아이콘 그리드 정렬 === */
+    /* === 푸터 및 SNS 아이콘 === */
     footer {
       text-align: center;
       padding: 40px 20px;
@@ -260,35 +287,18 @@
 
     /* 반응형 모바일 최적화 */
     @media (max-width: 600px) {
-      header h1 {
-        font-size: 1.8em;
-        gap: 6px;
-      }
-
-      header p {
-        font-size: 14px;
-      }
-
-      section {
-        padding: 30px 20px;
-        margin: 20px 10px;
-      }
-
-      .model-buttons {
-        flex-direction: column;
-        align-items: stretch;
-        margin-left: 0;
-      }
-      
-      .btn {
-        width: 100%;
-        box-sizing: border-box;
-      }
+      header h1 { font-size: 1.8em; gap: 6px; }
+      header p { font-size: 14px; }
+      section { padding: 30px 20px; margin: 20px 10px; }
+      .model-buttons { flex-direction: column; align-items: stretch; margin-left: 0; }
+      .btn { width: 100%; box-sizing: border-box; }
+      .back-to-shop-link { font-size: 1.35em; flex-wrap: wrap; gap: 6px; }
     }
   </style>
 </head>
 <body>
 
+  <!-- 헤더 -->
   <header>
     <h1>
       <span class="paw-icon">🐾</span>
@@ -297,6 +307,7 @@
     <p>AI (ML), AR/VR, and Biometric data & Physical Products nearby your real life for next-generation Animal welfare</p>
   </header>
 
+  <!-- 기능 섹션 -->
   <section>
     <h2>🚀 Key Features</h2>
     <ul>
@@ -330,16 +341,19 @@
     </ul>
   </section>
 
+  <!-- B.T. Spray System 섹션 -->
   <section>
     <h2>📦 B.T. Spray System & ES Shelter Tech's Water Technology</h2>
     
+    <!-- ✨ [업그레이드 반영] 완벽한 글로벌 커머스 스타일의 Back to Shop 카드 영역 -->
     <div class="shop-card">
       <p>Smart hygiene for happier, healthier pets—and faster adoption. Find yours today.</p>
-      <a href="https://pethygiene.shop/en" target="_blank" rel="noopener noreferrer" style="font-weight: bold; font-size: 1.05em; color: #ea580c;">
-        👉 Shop : https://pethygiene.shop/en
+      <a href="https://pethygiene.shop/" target="_blank" rel="noopener noreferrer" class="back-to-shop-link">
+        👉 Back to Shop <span class="url-text">https://pethygiene.shop/</span>
       </a>
     </div>
 
+    <!-- 유튜브 비디오 플레이어 플레이스먼트 -->
     <div class="youtube-container">
       <iframe src="https://www.youtube.com/embed/B_Mlv-tW0_k?si=Old8ZKaJzEyrUBdo" 
               title="YouTube video player" 
@@ -351,6 +365,7 @@
     </div>
   </section>
 
+  <!-- NDA 제출 -->
   <section>
     <h2>🔒 NDA Submission Portal</h2>
     <p>This system contains proprietary technologies. NDA submission is required for access.</p>
@@ -378,6 +393,7 @@
     </form>
   </section>
 
+  <!-- 푸터 및 SNS 멀티 채널 연동 -->
   <footer>
     <p>
       Contact: <a href="mailto:eunsang.sheltertech@gmail.com">eunsang.sheltertech@gmail.com</a>  

@@ -26,7 +26,7 @@
       color: #1d4ed8;
     }
 
-    /* === 헤더: 수정5 레이아웃 완벽 반영 === */
+    /* === 헤더: 수정5 레이아웃 반영 === */
     header {
       background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
       color: white;
@@ -35,7 +35,6 @@
       box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
     }
 
-    /* 로고 이미지와 타이틀 텍스트를 정교하게 정렬하는 플렉스 박스 */
     .header-title-container {
       display: inline-flex;
       align-items: center;
@@ -45,9 +44,8 @@
       margin-bottom: 8px;
     }
 
-    /* 수정5에 정의된 헤더 내 왼쪽 미니 로고 스타일 */
     .header-logo-img {
-      height: 65px; /* 타이틀 크기에 맞춰 고급스럽게 조정 */
+      height: 65px; 
       width: auto;
       border-radius: 6px;
       box-shadow: 0 2px 8px rgba(0,0,0,0.2);
@@ -59,7 +57,6 @@
       letter-spacing: -0.03em;
       margin: 0;
       color: #ffffff;
-      text-align: left;
     }
 
     header p {
@@ -364,22 +361,23 @@
 </head>
 <body>
 
-  <!-- 1. Hero Section (로고 이미지 인라인 배치 완성형 헤더) -->
+  <!-- 1. Hero Section (상단 로고 인라인 배치 헤더) -->
   <header>
     <div class="header-title-container">
-      <!-- 🛠️ 수정5에 명시된 비전 로고 엠블럼 매칭 완료 -->
-      <img src="Data_Driven_ShelterTech_ES_ShelterTech_ImageLogo.png" 
-           alt="ES Vision Logo" 
-           class="header-logo-img" />
+      <!-- 🛠️ 8번째 수정: 로고 깨짐 방지 교체 구간 
+           실제 파일명과 완벽히 매칭되도록 아래 두 줄 중 현재 폴더에 있는 진짜 파일명의 주석(<!--)을 풀고 쓰세요! -->
+      <img src="Data_Driven_ShelterTech_ES_ShelterTech_ImageLogo_2.png" alt="ES Vision Logo" class="header-logo-img" />
+      <!-- <img src="Data_Driven_ShelterTech_ES_ShelterTech_ImageLogo.png" alt="ES Vision Logo" class="header-logo-img" /> -->
+      
       <h1>EunSang Shelter Tech</h1>
     </div>
     <p>The Simplest Way to Care for More Lives.</p>
     <div class="sub-desc">
-      You didn’t enter animal welfare to manage complicated software or stare at data points. You’re here for the animals. EunSang Shelter Tech brings you familiar, real-world products infused with quiet, gentle technology. It feels just like the traditional ways you love, but works beautifully behind the scenes to give you your time back.[cite: 1]
+      You didn’t enter animal welfare to manage complicated software or stare at data points. You’re here for the animals. EunSang Shelter Tech brings you familiar, real-world products infused with quiet, gentle technology. It feels just like the traditional ways you love, but works beautifully behind the scenes to give you your time back.
     </div>
   </header>
 
-  <!-- 2. Key Features (핵심 기능 소개) -->
+  <!-- 2. Key Features (핵심 기능 소개 -[cite: 1] 전체 삭제 완료) -->
   <section>
     <h2>🚀 Key Features</h2>
     
@@ -388,7 +386,7 @@
       <div class="feature-header">
         <h3>📋 Your Virtual Caring Assistant : "Tech That Feels Like Second Nature"</h3>
       </div>
-      <p>All your animals' stories, organized beautifully in one soft glance. No spreadsheets, no confusing codes. See exactly how your animals are doing, who needs an extra hug today, and who is ready for a forever home—just like looking through your trusted daily notebook, but smarter.[cite: 1]</p>
+      <p>All your animals' stories, organized beautifully in one soft glance. No spreadsheets, no confusing codes. See exactly how your animals are doing, who needs an extra hug today, and who is ready for a forever home—just like looking through your trusted daily notebook, but smarter.</p>
     </div>
 
     <!-- 기능 2 -->
@@ -401,7 +399,7 @@
           Return Rate Prediction
         </a>
       </div>
-      <p>Fewer heartbreaks, more permanent goodbyes. Our intuitive system helps you understand an animal's unique personality before they leave your doors. It gently guides you to the right family, preventing the sadness of a returned pet and keeping your staff from emotional burnout.[cite: 1]</p>
+      <p>Fewer heartbreaks, more permanent goodbyes. Our intuitive system helps you understand an animal's unique personality before they leave your doors. It gently guides you to the right family, preventing the sadness of a returned pet and keeping your staff from emotional burnout.</p>
     </div>
 
     <!-- 기능 3 -->
@@ -414,7 +412,7 @@
           Adoption Rate Prediction
         </a>
       </div>
-      <p>Warm matches that bring emotional relief. Predicting adoption timing means you can breathe easier. Know exactly how to pace your shelter's week so your staff never feels overwhelmed, and every animal gets the focused love they deserve.[cite: 1]</p>
+      <p>Warm matches that bring emotional relief. Predicting adoption timing means you can breathe easier. Know exactly how to pace your shelter's week so your staff never feels overwhelmed, and every animal gets the focused love they deserve.</p>
     </div>
 
     <!-- 기능 4 -->
@@ -427,7 +425,7 @@
           Smart Matching & eCommerce
         </a>
       </div>
-      <p>Turning new adoptions into ongoing care for your shelter. Finding the perfect family is just the beginning. Our simple app helps new pet parents find the exact food and supplies their new baby needs. Every time they shop, a portion of the proceeds flows right back into your shelter—creating a warm, continuous circle of funding without you asking for a single donation.[cite: 1]</p>
+      <p>Turning new adoptions into ongoing care for your shelter. Finding the perfect family is just the beginning. Our simple app helps new pet parents find the exact food and supplies their new baby needs. Every time they shop, a portion of the proceeds flows right back into your shelter—creating a warm, continuous circle of funding without you asking for a single donation.</p>
     </div>
   </section>
 
@@ -437,17 +435,17 @@
     
     <div class="feature-item">
       <h3>✨ AR Mode</h3>
-      <p><strong>Bring them home, virtually.</strong> A gentle, easy-to-use feature that lets potential families virtually see a shelter animal inside their living room, sparking an instant emotional bond.[cite: 1]</p>
+      <p><strong>Bring them home, virtually.</strong> A gentle, easy-to-use feature that lets potential families virtually see a shelter animal inside their living room, sparking an instant emotional bond.</p>
     </div>
 
     <div class="feature-item">
       <h3>🩺 Shared Vet Intelligence</h3>
-      <p>Automatically connects animal heart rates and temperature with your veterinary partners for faster, smarter medical collaboration.[cite: 1]</p>
+      <p>Automatically connects animal heart rates and temperature with your veterinary partners for faster, smarter medical collaboration.</p>
     </div>
 
     <div class="feature-item">
       <h3>💡 AI Insights</h3>
-      <p><strong>An extra set of loving eyes.</strong> Simple, automated suggestions for mood, diet, and care, tailored to each animal’s daily rhythm.[cite: 1]</p>
+      <p><strong>An extra set of loving eyes.</strong> Simple, automated suggestions for mood, diet, and care, tailored to each animal’s daily rhythm.</p>
     </div>
 
     <!-- "수정2 .GIF" 첫 번째 배너 영역 -->
@@ -476,7 +474,7 @@
 
     <!-- "수정2 .GIF" 두 번째 배너 영역 -->
     <div class="shop-premium-card">
-      <div class="card-subtext">Smart hygiene for happier, healthier pets—and faster adoption. Find yours today.[cite: 1]</div>
+      <div class="card-subtext">Smart hygiene for happier, healthier pets—and faster adoption. Find yours today.</div>
       <div class="shop-action-row">
         <span class="back-to-shop-text">👉 Back to Shop</span>
         <a href="https://pethygiene.shop/" target="_blank" rel="noopener noreferrer" class="purple-shop-btn">
@@ -503,13 +501,14 @@
   <section>
     <h2>🔒 NDA Submission & Contact</h2>
     <div class="cta-text-wrapper">
-      <div class="cta-lead">“Let’s Make Your Daily Rescue Work Just a Little Bit Easier.”[cite: 1]</div>
-      <p>You don’t need to be a tech expert to bring the future into your shelter. We are looking for a small, exclusive group of dedicated shelter leaders to experience our tools first-hand—with our team holding your hand every step of the way. Let us take the heavy lifting off your shoulders so you can focus on the hearts in your care. Call or email us today for a warm, personal chat.[cite: 1]</p>
+      <div class="cta-lead">“Let’s Make Your Daily Rescue Work Just a Little Bit Easier.”</div>
+      <p>You don’t need to be a tech expert to bring the future into your shelter. We are looking for a small, exclusive group of dedicated shelter leaders to experience our tools first-hand—with our team holding your hand every step of the way. Let us take the heavy lifting off your shoulders so you can focus on the hearts in your care. Call or email us today for a warm, personal chat.</p>
     </div>
 
+    <!-- 🛠️ 7번째 수정: 이메일 전용 추적 주소 연동 완료 -->
     <div class="cta-buttons">
       <a href="tel:+12522424140" class="btn btn-cta">📞 Call Us +1 252 242 4140</a>
-      <a href="mailto:eunsang.sheltertech@gmail.com" class="btn btn-cta">✉️ Send an Email to Our Team</a>
+      <a href="mailto:sheltertech@pethygiene.shop" class="btn btn-cta">✉️ Send an Email to Our Team</a>
     </div>
 
     <form action="https://formspree.io/f/your-form-id" method="POST" style="margin-top: 10px;">
@@ -538,8 +537,9 @@
         </div>
       </div>
 
+      <!-- 🛠️ 7번째 수정: NDA 안내 문구 이메일 주소 전용 주소로 교체 -->
       <p style="font-size: 11.5px; color: #64748b; margin-top: 6px; margin-bottom: 0;"><strong>📎 NDA file upload:</strong> Please send your signed NDA to  
-        <a href="mailto:eunsang.sheltertech@gmail.com">eunsang.sheltertech@gmail.com</a>[cite: 2]</p>
+        <a href="mailto:sheltertech@pethygiene.shop">sheltertech@pethygiene.shop</a></p>
 
       <button type="submit">Submit Request</button>
     </form>
@@ -548,11 +548,12 @@
   <!-- 5. Footer & SNS Channels -->
   <footer>
     <div class="disclaimer-box">
-      <strong>A Note from Our Lab:</strong> To protect the continuous care and proprietary ideas we are building for shelters like yours, the visuals and tools shown here are presented as a warm demonstration. As we are lovingly developing this ecosystem alongside real-world caretakers, full project details can be shared personally under a gentle Non-Disclosure Agreement (NDA).[cite: 1]
+      <strong>A Note from Our Lab:</strong> To protect the continuous care and proprietary ideas we are building for shelters like yours, the visuals and tools shown here are presented as a warm demonstration. As we are lovingly developing this ecosystem alongside real-world caretakers, full project details can be shared personally under a gentle Non-Disclosure Agreement (NDA).
     </div>
 
+    <!-- 🛠️ 7번째 수정: 하드코딩된 푸터 연락처 메일 주소 변경 -->
     <p style="margin: 0 0 8px 0;">
-      Contact: <a href="mailto:eunsang.sheltertech@gmail.com">eunsang.sheltertech@gmail.com</a>[cite: 1, 2]
+      Contact: <a href="mailto:sheltertech@pethygiene.shop">sheltertech@pethygiene.shop</a>
     </p>
 
     <div class="sns-container">
@@ -574,7 +575,7 @@
     </div>
 
     <p style="margin-top: 16px; font-size: 11px; color: #94a3b8; margin-bottom: 0;">
-      © 2026 ES Shelter Tech Inc. All rights reserved.[cite: 1]
+      © 2026 ES Shelter Tech Inc. All rights reserved.
     </p>
   </footer>
 

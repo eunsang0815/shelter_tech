@@ -12,7 +12,7 @@
       padding: 0;
       background-color: #f8fafc;
       color: #1e293b;
-      line-height: 1.5;
+      line-height: 1.45;
       letter-spacing: -0.01em;
     }
 
@@ -30,13 +30,13 @@
     header {
       background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
       color: white;
-      padding: 35px 20px;
+      padding: 28px 20px;
       text-align: center;
       box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
     }
 
     header h1 {
-      font-size: 2.2em;
+      font-size: 2.1em;
       font-weight: 800;
       letter-spacing: -0.03em;
       margin: 0;
@@ -55,25 +55,42 @@
     }
 
     header p {
-      font-size: 16px;
-      margin: 8px auto 0 auto;
+      font-size: 15px;
+      margin: 6px auto 0 auto;
       max-width: 700px;
       font-weight: 500;
     }
 
     header .sub-desc {
-      font-size: 13.5px;
-      margin: 8px auto 0 auto;
+      font-size: 13px;
+      margin: 6px auto 0 auto;
       max-width: 650px;
       opacity: 0.85;
-      line-height: 1.45;
+      line-height: 1.4;
+    }
+
+    /* === 🌟 비전 & 방향성 상단 대형 로고 스타일 === */
+    .vision-logo-container {
+      max-width: 800px;
+      margin: 14px auto 4px auto;
+      padding: 0 8px;
+      box-sizing: border-box;
+      text-align: center;
+    }
+
+    .vision-logo-img {
+      width: 100%;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+      display: block;
     }
 
     /* === 메인 섹션 === */
     section {
-      padding: 22px 25px;
+      padding: 16px 22px;
       max-width: 800px;
-      margin: 14px auto;
+      margin: 10px auto;
       background-color: white;
       border-radius: 10px;
       box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.04), 0 0 0 1px rgba(0,0,0,0.03);
@@ -81,34 +98,33 @@
 
     h2 {
       color: #0f172a;
-      font-size: 1.35em;
+      font-size: 1.3em;
       font-weight: 700;
       margin-top: 0;
-      margin-bottom: 12px;
+      margin-bottom: 10px;
       display: flex;
       align-items: center;
       gap: 6px;
       border-bottom: 1px solid #f1f5f9;
-      padding-bottom: 6px;
+      padding-bottom: 5px;
     }
 
-    /* === ✨ [수정사항 반영] 타이틀과 버튼을 한 줄로 배치하는 헤더 플렉스 박스 === */
     .feature-header {
       display: flex;
       align-items: center;
       justify-content: flex-start;
-      gap: 12px; /* 제목과 버튼 사이 간격 */
+      gap: 10px;
       flex-wrap: wrap;
-      margin-bottom: 6px;
+      margin-bottom: 4px;
     }
 
     .feature-item {
-      margin-bottom: 16px;
+      margin-bottom: 12px;
     }
 
     .feature-item h3 {
-      font-size: 1.1em;
-      margin: 0; /* 플렉스 정렬을 위해 마진 리셋 */
+      font-size: 1.05em;
+      margin: 0;
       color: #1e293b;
       display: flex;
       align-items: center;
@@ -118,23 +134,23 @@
     .feature-item p {
       margin: 0;
       color: #475569;
-      font-size: 0.93em;
+      font-size: 0.92em;
     }
 
-    /* === 버튼 인라인/단정하게 축소 조율 === */
+    /* === 인라인 버튼 스타일 === */
     .btn {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      padding: 6px 14px; /* 이미지 레이아웃에 맞춰 패딩을 더 컴팩트하게 조율 */
-      font-size: 0.85em;
+      padding: 4px 12px;
+      font-size: 0.82em;
       font-weight: 700;
-      border-radius: 6px;
+      border-radius: 5px;
       color: #fff;
       text-decoration: none;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
       transition: all 0.2s ease;
-      white-space: nowrap; /* 제목 옆에서 버튼 글자가 깨지지 않도록 방지 */
+      white-space: nowrap;
     }
 
     .btn:hover {
@@ -147,45 +163,72 @@
     .btn-adoption { background: linear-gradient(135deg, #f97316, #ea580c); }
     .btn-matching { background: linear-gradient(135deg, #10b981, #059669); }
 
-    /* === 쇼핑몰 배너 박스 === */
-    .shop-card {
-      background: linear-gradient(135deg, #fdf8f6 0%, #fff7ed 100%);
-      border: 1px solid #ffedd5;
-      border-left: 4px solid #ea580c;
-      padding: 14px 18px;
-      margin: 12px 0;
+    /* === 🎬 [수정사항 반영] "수정2 .GIF" 전용 쇼핑몰 배너 스타일 === */
+    .shop-premium-card {
+      background: #fffcfb;
+      border: 1px solid #ffe2d1;
+      border-left: 5px solid #ea580c;
+      padding: 10px 14px;
+      margin: 8px 0;
       border-radius: 6px;
-    }
-
-    .shop-card p {
-      margin: 0 0 8px 0;
-      font-size: 1em;
-      font-weight: 600;
-      color: #475569;
-    }
-
-    .back-to-shop-link {
-      display: inline-flex;
-      align-items: center;
+      display: flex;
+      flex-direction: column;
       gap: 6px;
-      font-size: 1.4em;
+    }
+
+    .shop-premium-card .card-title {
+      font-size: 0.95em;
       font-weight: 800;
       color: #0f172a;
-    }
-    
-    .back-to-shop-link .url-text {
-      color: #c2410c;
-      font-weight: 700;
-      text-decoration: underline;
-      text-underline-offset: 2px;
+      margin: 0;
     }
 
-    /* === 유튜브 그리드 시스템 === */
-    .video-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
+    .shop-premium-card .card-subtext {
+      font-size: 0.88em;
+      color: #475569;
+      margin: 0;
+    }
+
+    .shop-action-row {
+      display: flex;
+      align-items: center;
       gap: 12px;
-      margin: 12px auto;
+      margin-top: 2px;
+    }
+
+    .back-to-shop-text {
+      font-size: 1.1em;
+      font-weight: 800;
+      color: #0f172a;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      white-space: nowrap;
+    }
+
+    /* "수정2 .GIF" 특유의 퍼플 라운드 버튼 정밀 구현 */
+    .purple-shop-btn {
+      background: #6d28d9;
+      color: white !important;
+      font-weight: 700;
+      font-size: 0.95em;
+      padding: 6px 20px;
+      border-radius: 20px;
+      box-shadow: 0 2px 6px rgba(109, 40, 217, 0.2);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s ease;
+    }
+
+    .purple-shop-btn:hover {
+      background: #5b21b6;
+      box-shadow: 0 4px 10px rgba(109, 40, 217, 0.3);
+    }
+
+    /* === 단독 비디오 컨테이너 시스템 (상하 조밀 배치용) === */
+    .single-video-wrapper {
+      margin: 8px 0 14px 0;
     }
 
     .youtube-container {
@@ -208,32 +251,33 @@
 
     /* === CTA 및 폼 레이아웃 === */
     .cta-text-wrapper {
-      margin-bottom: 12px;
+      margin-bottom: 10px;
     }
     
     .cta-lead {
-      font-size: 1.15em;
+      font-size: 1.1em;
       font-weight: 700;
       color: #0f172a;
-      margin-bottom: 6px;
+      margin-bottom: 4px;
     }
 
     .cta-buttons {
       display: flex;
       gap: 8px;
-      margin: 12px 0;
+      margin: 10px 0;
       flex-wrap: wrap;
     }
 
     .btn-cta {
       background: linear-gradient(135deg, #1e293b, #0f172a);
       color: white;
+      padding: 6px 14px;
     }
 
     .form-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 8px 12px;
+      gap: 6px 10px;
     }
 
     .form-group-full {
@@ -242,8 +286,8 @@
 
     input, textarea, select, button {
       width: 100%;
-      padding: 9px 12px;
-      margin-top: 4px;
+      padding: 8px 10px;
+      margin-top: 3px;
       margin-bottom: 0;
       border: 1px solid #cbd5e1;
       border-radius: 5px;
@@ -254,7 +298,7 @@
 
     label {
       font-weight: 600;
-      font-size: 0.82em;
+      font-size: 0.8em;
       color: #475569;
     }
 
@@ -263,29 +307,29 @@
       color: white;
       border: none;
       font-weight: 700;
-      margin-top: 8px;
+      margin-top: 6px;
       cursor: pointer;
     }
 
     /* === 푸터 === */
     footer {
       text-align: center;
-      padding: 25px 20px;
-      font-size: 0.88em;
+      padding: 20px 20px;
+      font-size: 0.85em;
       color: #64748b;
-      margin-top: 30px;
+      margin-top: 24px;
       background-color: #ffffff;
       border-top: 1px solid #e2e8f0;
     }
 
     .disclaimer-box {
       max-width: 750px;
-      margin: 0 auto 18px auto;
-      font-size: 0.82em;
-      line-height: 1.45;
+      margin: 0 auto 14px auto;
+      font-size: 0.8em;
+      line-height: 1.4;
       color: #94a3b8;
       background-color: #f8fafc;
-      padding: 12px 16px;
+      padding: 10px 14px;
       border-radius: 6px;
       border: 1px dashed #e2e8f0;
     }
@@ -293,16 +337,16 @@
     .sns-container {
       display: flex;
       justify-content: center;
-      gap: 12px;
-      margin-top: 12px;
+      gap: 10px;
+      margin-top: 10px;
       flex-wrap: wrap;
     }
 
     .sns-link {
       text-decoration: none;
       font-weight: 600;
-      font-size: 0.85em;
-      padding: 5px 10px;
+      font-size: 0.82em;
+      padding: 4px 8px;
       border-radius: 5px;
       background-color: #f1f5f9;
     }
@@ -314,14 +358,14 @@
 
     /* 반응형 모바일 최적화 */
     @media (max-width: 600px) {
-      header h1 { font-size: 1.7em; }
-      header p { font-size: 13.5px; }
-      section { padding: 16px 18px; margin: 10px 8px; }
-      .feature-header { flex-direction: column; align-items: flex-start; gap: 6px; } /* 모바일에서는 타이틀 아래에 버튼 정렬 */
+      header h1 { font-size: 1.6em; }
+      header p { font-size: 13px; }
+      section { padding: 14px 16px; margin: 8px 6px; }
+      .feature-header { flex-direction: column; align-items: flex-start; gap: 4px; }
+      .shop-action-row { flex-direction: column; align-items: flex-start; gap: 6px; }
+      .purple-shop-btn { width: 100%; box-sizing: border-box; }
       .cta-buttons, .form-grid { display: flex; flex-direction: column; align-items: stretch; }
       .btn, input, textarea, select, button { width: 100%; }
-      .video-grid { grid-template-columns: 1fr; gap: 10px; }
-      .back-to-shop-link { font-size: 1.15em; }
     }
   </style>
 </head>
@@ -339,6 +383,13 @@
     </div>
   </header>
 
+  <!-- 🌟 제미나이 추천 최적화 배치: 비전과 방향성을 제시하는 메인 브랜드 이미지 로고 구역 -->
+  <div class="vision-logo-container">
+    <img src="Data_Driven_ShelterTech_ES_ShelterTech_ImageLogo.png" 
+         alt="Data Driven Shelter Tech ES Shelter Tech Vision Logo" 
+         class="vision-logo-img" />
+  </div>
+
   <!-- 2. Key Features (핵심 기능 소개) -->
   <section>
     <h2>🚀 Key Features</h2>
@@ -351,7 +402,7 @@
       <p>All your animals' stories, organized beautifully in one soft glance. No spreadsheets, no confusing codes. See exactly how your animals are doing, who needs an extra hug today, and who is ready for a forever home—just like looking through your trusted daily notebook, but smarter.[cite: 1]</p>
     </div>
 
-    <!-- 기능 2 (수정1.png 레이아웃 반영: 타이틀 옆에 버튼 인라인 배치) -->
+    <!-- 기능 2 ("수정1.png" 레이아웃 반영) -->
     <div class="feature-item">
       <div class="feature-header">
         <h3>💙 Keeping Families Together</h3>
@@ -364,7 +415,7 @@
       <p>Fewer heartbreaks, more permanent goodbyes. Our intuitive system helps you understand an animal's unique personality before they leave your doors. It gently guides you to the right family, preventing the sadness of a returned pet and keeping your staff from emotional burnout.[cite: 1]</p>
     </div>
 
-    <!-- 기능 3 (수정1.png 레이아웃 반영: 타이틀 옆에 버튼 인라인 배치) -->
+    <!-- 기능 3 ("수정1.png" 레이아웃 반영) -->
     <div class="feature-item">
       <div class="feature-header">
         <h3>🧡 Filling the Shelter's Heart & Bowls</h3>
@@ -377,7 +428,7 @@
       <p>Warm matches that bring emotional relief. Predicting adoption timing means you can breathe easier. Know exactly how to pace your shelter's week so your staff never feels overwhelmed, and every animal gets the focused love they deserve.[cite: 1]</p>
     </div>
 
-    <!-- 기능 4 (수정1.png 레이아웃 반영: 타이틀 옆에 버튼 인라인 배치) -->
+    <!-- 기능 4 ("수정1.png" 레이아웃 반영) -->
     <div class="feature-item">
       <div class="feature-header">
         <h3>🟢 A Lifetime of Support & Funding</h3>
@@ -391,7 +442,7 @@
     </div>
   </section>
 
-  <!-- 3. Form Factor & Smart Care (기타 하드웨어/AI 기능 및 커머스 연동) -->
+  <!-- 3. Form Factor & Smart Care (하드웨어, 위생 배너 및 비디오 섹션) -->
   <section>
     <h2>📦 Form Factor, Smart Care & Hygiene</h2>
     
@@ -410,16 +461,19 @@
       <p><strong>An extra set of loving eyes.</strong> Simple, automated suggestions for mood, diet, and care, tailored to each animal’s daily rhythm.[cite: 1]</p>
     </div>
 
-    <!-- 완벽한 글로벌 커머스 스타일의 PetHygiene.Shop 카드 영역 -->
-    <div class="shop-card">
-      <p>Smart hygiene for happier, healthier pets—and faster adoption. Find yours today.[cite: 1]</p>
-      <a href="https://pethygiene.shop/" target="_blank" rel="noopener noreferrer" class="back-to-shop-link">
-        👉 PetHygiene.Shop <span class="url-text">https://pethygiene.shop/</span>
-      </a>
+    <!-- 🛠️ [수정사항 반영] "수정2 .GIF" 첫 번째 배너 영역 -->
+    <div class="shop-premium-card">
+      <div class="card-title">B.T. Spray System & ES Shelter Tech's Water Technology</div>
+      <div class="shop-action-row">
+        <span class="back-to-shop-text">👉 Back to Shop</span>
+        <a href="https://pethygiene.shop/" target="_blank" rel="noopener noreferrer" class="purple-shop-btn">
+          Pet Hygiene . Shop
+        </a>
+      </div>
     </div>
 
-    <!-- 가로 배치 그리드가 적용된 유튜브 플레이어 영역 -->
-    <div class="video-grid">
+    <!-- 브러쉬 팁 스프레이 비디오 -->
+    <div class="single-video-wrapper">
       <div class="youtube-container">
         <iframe src="https://www.youtube.com/embed/mqaXuaAUni0?si=OQiL0yw7x6x5S3Tp&amp;controls=0&amp;start=18" 
                 title="B.T. Spray System Video" 
@@ -429,7 +483,21 @@
                 allowfullscreen>
         </iframe>
       </div>
+    </div>
 
+    <!-- 🛠️ [수정사항 반영] "수정2 .GIF" 두 번째 배너 영역 -->
+    <div class="shop-premium-card">
+      <div class="card-subtext">Smart hygiene for happier, healthier pets—and faster adoption. Find yours today.[cite: 1]</div>
+      <div class="shop-action-row">
+        <span class="back-to-shop-text">👉 Back to Shop</span>
+        <a href="https://pethygiene.shop/" target="_blank" rel="noopener noreferrer" class="purple-shop-btn">
+          Pet Hygiene . Shop
+        </a>
+      </div>
+    </div>
+
+    <!-- 대시보드 시연용 비디오 -->
+    <div class="single-video-wrapper">
       <div class="youtube-container">
         <iframe src="https://www.youtube.com/embed/B_Mlv-tW0_k?si=w3FW4Npf5hmO4XId&amp;controls=0&amp;start=18" 
                 title="Shelter Hygiene Monitoring Video" 
@@ -442,7 +510,7 @@
     </div>
   </section>
 
-  <!-- 4. Closing CTA (행동 유도 부문) & NDA Portal -->
+  <!-- 4. Closing CTA & NDA Portal -->
   <section>
     <h2>🔒 NDA Submission & Contact</h2>
     <div class="cta-text-wrapper">
@@ -455,8 +523,8 @@
       <a href="mailto:eunsang.sheltertech@gmail.com" class="btn btn-cta">✉️ Send an Email to Our Team</a>
     </div>
 
-    <form action="https://formspree.io/f/your-form-id" method="POST" style="margin-top: 12px;">
-      <p style="font-weight: 700; margin-top: 0; margin-bottom: 8px; color: #0f172a; font-size:0.95em;">System Access Request Form</p>
+    <form action="https://formspree.io/f/your-form-id" method="POST" style="margin-top: 10px;">
+      <p style="font-weight: 700; margin-top: 0; margin-bottom: 6px; color: #0f172a; font-size:0.92em;">System Access Request Form</p>
       
       <div class="form-grid">
         <div>
@@ -481,7 +549,7 @@
         </div>
       </div>
 
-      <p style="font-size: 12px; color: #64748b; margin-top: 8px; margin-bottom: 0;"><strong>📎 NDA file upload:</strong> Please send your signed NDA to  
+      <p style="font-size: 11.5px; color: #64748b; margin-top: 6px; margin-bottom: 0;"><strong>📎 NDA file upload:</strong> Please send your signed NDA to  
         <a href="mailto:eunsang.sheltertech@gmail.com">eunsang.sheltertech@gmail.com</a>[cite: 2]</p>
 
       <button type="submit">Submit Request</button>
@@ -494,7 +562,7 @@
       <strong>A Note from Our Lab:</strong> To protect the continuous care and proprietary ideas we are building for shelters like yours, the visuals and tools shown here are presented as a warm demonstration. As we are lovingly developing this ecosystem alongside real-world caretakers, full project details can be shared personally under a gentle Non-Disclosure Agreement (NDA).[cite: 1]
     </div>
 
-    <p style="margin: 0 0 10px 0;">
+    <p style="margin: 0 0 8px 0;">
       Contact: <a href="mailto:eunsang.sheltertech@gmail.com">eunsang.sheltertech@gmail.com</a>[cite: 1, 2]
     </p>
 
@@ -516,7 +584,7 @@
       </a>
     </div>
 
-    <p style="margin-top: 20px; font-size: 11.5px; color: #94a3b8; margin-bottom: 0;">
+    <p style="margin-top: 16px; font-size: 11px; color: #94a3b8; margin-bottom: 0;">
       © 2026 ES Shelter Tech Inc. All rights reserved.[cite: 1]
     </p>
   </footer>

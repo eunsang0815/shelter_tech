@@ -26,64 +26,56 @@
       color: #1d4ed8;
     }
 
-    /* === 헤더 === */
+    /* === 헤더: 수정5 레이아웃 완벽 반영 === */
     header {
       background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
       color: white;
-      padding: 28px 20px;
+      padding: 24px 20px;
       text-align: center;
       box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
     }
 
+    /* 로고 이미지와 타이틀 텍스트를 정교하게 정렬하는 플렉스 박스 */
+    .header-title-container {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      max-width: 100%;
+      margin-bottom: 8px;
+    }
+
+    /* 수정5에 정의된 헤더 내 왼쪽 미니 로고 스타일 */
+    .header-logo-img {
+      height: 65px; /* 타이틀 크기에 맞춰 고급스럽게 조정 */
+      width: auto;
+      border-radius: 6px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    }
+
     header h1 {
-      font-size: 2.1em;
+      font-size: 2.2em;
       font-weight: 800;
       letter-spacing: -0.03em;
       margin: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      flex-wrap: wrap;
-    }
-
-    .paw-icon {
-      font-size: 1.1em;
-      background: linear-gradient(135deg, #fb923c, #ea580c);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+      color: #ffffff;
+      text-align: left;
     }
 
     header p {
       font-size: 15px;
-      margin: 6px auto 0 auto;
+      margin: 4px auto 0 auto;
       max-width: 700px;
-      font-weight: 500;
+      font-weight: 600;
+      color: #cbd5e1;
     }
 
     header .sub-desc {
       font-size: 13px;
-      margin: 6px auto 0 auto;
-      max-width: 650px;
+      margin: 10px auto 0 auto;
+      max-width: 720px;
       opacity: 0.85;
-      line-height: 1.4;
-    }
-
-    /* === 🌟 비전 & 방향성 상단 대형 로고 스타일 === */
-    .vision-logo-container {
-      max-width: 800px;
-      margin: 14px auto 4px auto;
-      padding: 0 8px;
-      box-sizing: border-box;
-      text-align: center;
-    }
-
-    .vision-logo-img {
-      width: 100%;
-      height: auto;
-      border-radius: 12px;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-      display: block;
+      line-height: 1.45;
     }
 
     /* === 메인 섹션 === */
@@ -163,7 +155,7 @@
     .btn-adoption { background: linear-gradient(135deg, #f97316, #ea580c); }
     .btn-matching { background: linear-gradient(135deg, #10b981, #059669); }
 
-    /* === 🎬 [수정사항 반영] "수정2 .GIF" 전용 쇼핑몰 배너 스타일 === */
+    /* === "수정2 .GIF" 전용 쇼핑몰 배너 스타일 === */
     .shop-premium-card {
       background: #fffcfb;
       border: 1px solid #ffe2d1;
@@ -206,7 +198,6 @@
       white-space: nowrap;
     }
 
-    /* "수정2 .GIF" 특유의 퍼플 라운드 버튼 정밀 구현 */
     .purple-shop-btn {
       background: #6d28d9;
       color: white !important;
@@ -226,7 +217,7 @@
       box-shadow: 0 4px 10px rgba(109, 40, 217, 0.3);
     }
 
-    /* === 단독 비디오 컨테이너 시스템 (상하 조밀 배치용) === */
+    /* === 단독 비디오 컨테이너 시스템 === */
     .single-video-wrapper {
       margin: 8px 0 14px 0;
     }
@@ -358,7 +349,9 @@
 
     /* 반응형 모바일 최적화 */
     @media (max-width: 600px) {
-      header h1 { font-size: 1.6em; }
+      .header-title-container { flex-direction: column; gap: 8px; }
+      .header-logo-img { height: 50px; }
+      header h1 { font-size: 1.7em; text-align: center; }
       header p { font-size: 13px; }
       section { padding: 14px 16px; margin: 8px 6px; }
       .feature-header { flex-direction: column; align-items: flex-start; gap: 4px; }
@@ -371,24 +364,20 @@
 </head>
 <body>
 
-  <!-- 1. Hero Section (최상단 메인 화면) -->
+  <!-- 1. Hero Section (로고 이미지 인라인 배치 완성형 헤더) -->
   <header>
-    <h1>
-      <span class="paw-icon">🐾</span>
-      EunSang Shelter Tech
-    </h1>
-    <p><strong>The Simplest Way to Care for More Lives.</strong></p>
+    <div class="header-title-container">
+      <!-- 🛠️ 수정5에 명시된 비전 로고 엠블럼 매칭 완료 -->
+      <img src="Data_Driven_ShelterTech_ES_ShelterTech_ImageLogo.png" 
+           alt="ES Vision Logo" 
+           class="header-logo-img" />
+      <h1>EunSang Shelter Tech</h1>
+    </div>
+    <p>The Simplest Way to Care for More Lives.</p>
     <div class="sub-desc">
       You didn’t enter animal welfare to manage complicated software or stare at data points. You’re here for the animals. EunSang Shelter Tech brings you familiar, real-world products infused with quiet, gentle technology. It feels just like the traditional ways you love, but works beautifully behind the scenes to give you your time back.[cite: 1]
     </div>
   </header>
-
-  <!-- 🌟 제미나이 추천 최적화 배치: 비전과 방향성을 제시하는 메인 브랜드 이미지 로고 구역 -->
-  <div class="vision-logo-container">
-    <img src="Data_Driven_ShelterTech_ES_ShelterTech_ImageLogo.png" 
-         alt="Data Driven Shelter Tech ES Shelter Tech Vision Logo" 
-         class="vision-logo-img" />
-  </div>
 
   <!-- 2. Key Features (핵심 기능 소개) -->
   <section>
@@ -402,7 +391,7 @@
       <p>All your animals' stories, organized beautifully in one soft glance. No spreadsheets, no confusing codes. See exactly how your animals are doing, who needs an extra hug today, and who is ready for a forever home—just like looking through your trusted daily notebook, but smarter.[cite: 1]</p>
     </div>
 
-    <!-- 기능 2 ("수정1.png" 레이아웃 반영) -->
+    <!-- 기능 2 -->
     <div class="feature-item">
       <div class="feature-header">
         <h3>💙 Keeping Families Together</h3>
@@ -415,7 +404,7 @@
       <p>Fewer heartbreaks, more permanent goodbyes. Our intuitive system helps you understand an animal's unique personality before they leave your doors. It gently guides you to the right family, preventing the sadness of a returned pet and keeping your staff from emotional burnout.[cite: 1]</p>
     </div>
 
-    <!-- 기능 3 ("수정1.png" 레이아웃 반영) -->
+    <!-- 기능 3 -->
     <div class="feature-item">
       <div class="feature-header">
         <h3>🧡 Filling the Shelter's Heart & Bowls</h3>
@@ -428,7 +417,7 @@
       <p>Warm matches that bring emotional relief. Predicting adoption timing means you can breathe easier. Know exactly how to pace your shelter's week so your staff never feels overwhelmed, and every animal gets the focused love they deserve.[cite: 1]</p>
     </div>
 
-    <!-- 기능 4 ("수정1.png" 레이아웃 반영) -->
+    <!-- 기능 4 -->
     <div class="feature-item">
       <div class="feature-header">
         <h3>🟢 A Lifetime of Support & Funding</h3>
@@ -461,7 +450,7 @@
       <p><strong>An extra set of loving eyes.</strong> Simple, automated suggestions for mood, diet, and care, tailored to each animal’s daily rhythm.[cite: 1]</p>
     </div>
 
-    <!-- 🛠️ [수정사항 반영] "수정2 .GIF" 첫 번째 배너 영역 -->
+    <!-- "수정2 .GIF" 첫 번째 배너 영역 -->
     <div class="shop-premium-card">
       <div class="card-title">B.T. Spray System & ES Shelter Tech's Water Technology</div>
       <div class="shop-action-row">
@@ -485,7 +474,7 @@
       </div>
     </div>
 
-    <!-- 🛠️ [수정사항 반영] "수정2 .GIF" 두 번째 배너 영역 -->
+    <!-- "수정2 .GIF" 두 번째 배너 영역 -->
     <div class="shop-premium-card">
       <div class="card-subtext">Smart hygiene for happier, healthier pets—and faster adoption. Find yours today.[cite: 1]</div>
       <div class="shop-action-row">

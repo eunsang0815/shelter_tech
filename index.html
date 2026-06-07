@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>EunSang Shelter Tech – Digital Twin Lab</title>
+  <title>EunSang Shelter Tech</title>
   <style>
     /* === 글로벌 프리미엄 테크 톤 CSS 정의 === */
     body {
@@ -12,7 +12,7 @@
       padding: 0;
       background-color: #f8fafc; /* 부드러운 고급 그레이 */
       color: #1e293b; /* 가독성 높은 다크 슬레이트 */
-      line-height: 1.7;
+      line-height: 1.6;
       letter-spacing: -0.01em;
     }
 
@@ -27,169 +27,173 @@
       text-decoration: none;
     }
 
-    /* === 헤더: 모던 테크 그라데이션 적용 === */
+    /* === 헤더: 상하 여백을 대폭 줄여 슬림하게 변경 === */
     header {
       background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
       color: white;
-      padding: 80px 20px;
+      padding: 50px 20px; /* 기존 90px에서 50px로 축소하여 빈 공간 제거 */
       text-align: center;
-      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
       position: relative;
     }
 
     header h1 {
-      font-size: 2.8em;
+      font-size: 2.4em;
       font-weight: 800;
       letter-spacing: -0.03em;
       margin: 0;
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 14px;
+      gap: 12px;
       flex-wrap: wrap;
     }
 
     .paw-icon {
-      font-size: 1.3em;
+      font-size: 1.2em;
       background: linear-gradient(135deg, #fb923c, #ea580c);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
 
     header p {
-      font-size: 16px;
-      margin-top: 15px;
-      max-width: 650px;
-      margin-left: auto;
-      margin-right: auto;
-      opacity: 0.85;
+      font-size: 17px;
+      margin: 12px auto 0 auto; /* 마진 축소 */
+      max-width: 700px;
       font-weight: 400;
     }
 
-    /* === 메인 섹션 스타일 고도화 === */
+    header .sub-desc {
+      font-size: 14px;
+      margin: 10px auto 0 auto; /* 마진 축소 */
+      max-width: 650px;
+      opacity: 0.8;
+      line-height: 1.5;
+    }
+
+    /* === 메인 섹션: 여백(Padding/Margin) 압축으로 조밀한 배치 === */
     section {
-      padding: 45px 35px;
+      padding: 28px 30px; /* 위아래 여백을 45px에서 28px로 대폭 줄임 */
       max-width: 800px;
-      margin: 40px auto;
+      margin: 20px auto; /* 섹션 간 간격을 40px에서 20px로 반감 */
       background-color: white;
-      border-radius: 16px; /* 부드러운 라운딩 */
-      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03), 0 0 0 1px rgba(0,0,0,0.03);
+      border-radius: 12px;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 0 0 1px rgba(0,0,0,0.03);
     }
 
     h2 {
       color: #0f172a;
-      font-size: 1.6em;
+      font-size: 1.45em;
       font-weight: 700;
       margin-top: 0;
-      margin-bottom: 24px;
+      margin-bottom: 16px; /* 하단 여백 축소 */
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 8px;
+      border-bottom: 1px solid #f1f5f9;
+      padding-bottom: 8px;
     }
 
-    ul {
-      padding-left: 22px;
+    .feature-item {
+      margin-bottom: 20px; /* 아이템 간 간격을 30px에서 20px로 축소 */
     }
 
-    li {
-      margin-bottom: 12px;
+    .feature-item h3 {
+      font-size: 1.15em;
+      margin-top: 0;
+      margin-bottom: 6px;
+      color: #1e293b;
+      display: flex;
+      align-items: center;
+      gap: 6px;
     }
 
-    /* === 입체적 다이내믹 버튼 스케일링 === */
+    .feature-item p {
+      margin: 0;
+      color: #475569;
+      font-size: 0.95em;
+    }
+
+    /* === 버튼 그룹 간격 조정 === */
     .model-buttons {
       display: flex;
-      gap: 12px;
+      gap: 10px;
       flex-wrap: wrap;
-      margin: 25px 0 25px 22px;
+      margin: 15px 0 5px 0; /* 상하 여백 최적화 */
     }
 
     .btn {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      padding: 14px 24px;
-      font-size: 0.95em;
+      padding: 11px 20px; /* 버튼 내부 여백을 살짝 줄여 콤팩트하게 만듦 */
+      font-size: 0.92em;
       font-weight: 700;
-      border-radius: 10px;
+      border-radius: 8px;
       color: #fff;
       text-align: center;
       text-decoration: none;
-      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
-      transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+      transition: all 0.2s ease;
     }
 
     .btn:hover {
-      transform: translateY(-4px) scale(1.02);
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.12);
       color: #fff;
     }
 
-    .btn-return {
-      background: linear-gradient(135deg, #3b82f6, #1d4ed8);
-    }
+    .btn-return { background: linear-gradient(135deg, #3b82f6, #1d4ed8); }
+    .btn-adoption { background: linear-gradient(135deg, #f97316, #ea580c); }
+    .btn-matching { background: linear-gradient(135deg, #10b981, #059669); }
 
-    .btn-adoption {
-      background: linear-gradient(135deg, #f97316, #ea580c);
-    }
-
-    .btn-matching {
-      background: linear-gradient(135deg, #10b981, #059669);
-    }
-
-    /* === ✨ [디자인 업그레이드] 쇼핑몰 링크 배너 박스 === */
+    /* === 쇼핑몰 링크 배너 박스 공간 절약 === */
     .shop-card {
       background: linear-gradient(135deg, #fdf8f6 0%, #fff7ed 100%);
       border: 1px solid #ffedd5;
-      border-left: 6px solid #ea580c; /* 브랜드 포인트 오렌지 두껍게 */
-      padding: 26px;
-      margin: 25px 0 25px 0;
-      border-radius: 6px 16px 16px 6px;
-      box-shadow: 0 4px 15px rgba(234, 88, 12, 0.04);
+      border-left: 5px solid #ea580c;
+      padding: 18px 22px; /* 상하 여백 줄임 */
+      margin: 18px 0;
+      border-radius: 8px;
     }
 
     .shop-card p {
-      margin: 0 0 16px 0;
-      font-size: 1.15em;
+      margin: 0 0 10px 0;
+      font-size: 1.05em;
       font-weight: 600;
       color: #475569;
     }
 
-    /* 원어민들이 가장 선호하는 고급 UI 형태의 대형 링크 스타일 */
     .back-to-shop-link {
       display: inline-flex;
       align-items: center;
-      gap: 12px;
-      font-size: 1.85em; /* 시원하고 큼직한 폰트 크기 */
-      font-weight: 800;   /* 볼드 강조 */
-      color: #0f172a;     /* 고급스러운 딥 네이비 */
-      text-decoration: none;
-      transition: transform 0.2s ease, opacity 0.2s ease;
+      gap: 8px;
+      font-size: 1.55em; /* 너무 과하지 않게 크기 조절 */
+      font-weight: 800;
+      color: #0f172a;
     }
     
-    /* 마우스를 올렸을 때 오른쪽으로 살짝 움직이는 세련된 인터랙션 효과 */
     .back-to-shop-link:hover {
-      transform: translateX(4px);
-      color: #1e293b;
+      transform: translateX(3px);
     }
     
     .back-to-shop-link .url-text {
-      color: #c2410c;     /* 신뢰감을 주는 브라운-오렌지 톤 주소 표시 */
+      color: #c2410c;
       font-weight: 700;
       text-decoration: underline;
-      text-underline-offset: 4px;
-      text-decoration-thickness: 2px;
+      text-underline-offset: 3px;
     }
 
-    /* === 유튜브 임베드 컨테이너 === */
+    /* === 유튜브 임베드 컨테이너 마진 축소 === */
     .youtube-container {
-      margin: 30px auto;
+      margin: 16px auto; /* 위아래 간격을 30px에서 16px로 대폭 축소 */
       text-align: center;
       position: relative;
-      padding-bottom: 56.25%; /* 16:9 비율 */
+      padding-bottom: 56.25%;
       height: 0;
       overflow: hidden;
-      border-radius: 12px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+      border-radius: 10px;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.08);
     }
 
     .youtube-container iframe {
@@ -201,30 +205,46 @@
       border: 0;
     }
 
-    /* === 입력 폼 & NDA 버튼 === */
-    input, textarea, select, button {
-      width: 100%;
-      padding: 14px;
-      margin-top: 8px;
-      margin-bottom: 22px;
-      border: 1px solid #cbd5e1;
-      border-radius: 8px;
-      box-sizing: border-box;
-      font-size: 14px;
-      background-color: #f8fafc;
-      transition: all 0.2s ease;
+    /* === CTA 영역 공간 최적화 === */
+    .cta-text-wrapper {
+      margin-bottom: 18px;
+    }
+    
+    .cta-lead {
+      font-size: 1.2em;
+      font-weight: 700;
+      color: #0f172a;
+      margin-bottom: 8px;
     }
 
-    input:focus, textarea:focus, select:focus {
-      outline: none;
-      border-color: #3b82f6;
-      background-color: #fff;
-      box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+    .cta-buttons {
+      display: flex;
+      gap: 10px;
+      margin: 15px 0;
+      flex-wrap: wrap;
+    }
+
+    .btn-cta {
+      background: linear-gradient(135deg, #1e293b, #0f172a);
+      color: white;
+    }
+
+    /* === 입력 폼 간격 압축 === */
+    input, textarea, select, button {
+      width: 100%;
+      padding: 11px; /* 14px에서 11px로 줄여 콤팩트하게 구조화 */
+      margin-top: 5px;
+      margin-bottom: 14px; /* 입력창 간 여백 줄임 */
+      border: 1px solid #cbd5e1;
+      border-radius: 6px;
+      box-sizing: border-box;
+      font-size: 13.5px;
+      background-color: #f8fafc;
     }
 
     label {
       font-weight: 600;
-      font-size: 0.9em;
+      font-size: 0.85em;
       color: #475569;
     }
 
@@ -233,86 +253,96 @@
       color: white;
       border: none;
       font-weight: 700;
-      font-size: 1em;
+      margin-top: 5px;
+      margin-bottom: 5px;
       cursor: pointer;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-      margin-top: 10px;
     }
 
-    button:hover {
-      background: linear-gradient(135deg, #334155, #1e293b);
-      transform: translateY(-1px);
-    }
-
-    /* === 푸터 및 SNS 아이콘 === */
+    /* === 푸터 스페이스 축소 === */
     footer {
       text-align: center;
-      padding: 40px 20px;
-      font-size: 0.95em;
+      padding: 35px 20px; /* 푸터 내부 여백 감소 */
+      font-size: 0.9em;
       color: #64748b;
-      margin-top: 60px;
+      margin-top: 40px;
       background-color: #ffffff;
       border-top: 1px solid #e2e8f0;
+    }
+
+    .disclaimer-box {
+      max-width: 750px;
+      margin: 0 auto 25px auto;
+      font-size: 0.85em;
+      line-height: 1.5;
+      color: #94a3b8;
+      background-color: #f8fafc;
+      padding: 15px;
+      border-radius: 6px;
+      border: 1px dashed #e2e8f0;
     }
 
     .sns-container {
       display: flex;
       justify-content: center;
-      gap: 25px;
-      margin-top: 20px;
+      gap: 15px;
+      margin-top: 15px;
       flex-wrap: wrap;
     }
 
     .sns-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
       text-decoration: none;
       font-weight: 600;
-      font-size: 0.95em;
-      padding: 8px 16px;
-      border-radius: 8px;
+      font-size: 0.9em;
+      padding: 6px 12px;
+      border-radius: 6px;
       background-color: #f1f5f9;
-      transition: all 0.2s ease;
     }
 
-    .sns-link:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
-    }
-
+    .link-youtube { color: #ff0000; }
     .link-facebook-primary { color: #1877f2; }
     .link-facebook-secondary { color: #3b5998; }
     .link-instagram { color: #e1306c; }
 
-    /* 반응형 모바일 최적화 */
     @media (max-width: 600px) {
-      header h1 { font-size: 1.8em; gap: 6px; }
+      header h1 { font-size: 1.8em; }
       header p { font-size: 14px; }
-      section { padding: 30px 20px; margin: 20px 10px; }
-      .model-buttons { flex-direction: column; align-items: stretch; margin-left: 0; }
-      .btn { width: 100%; box-sizing: border-box; }
-      .back-to-shop-link { font-size: 1.35em; flex-wrap: wrap; gap: 6px; }
+      section { padding: 20px 15px; margin: 15px 10px; }
+      .model-buttons, .cta-buttons { flex-direction: column; align-items: stretch; }
+      .btn { width: 100%; }
+      .back-to-shop-link { font-size: 1.2em; }
     }
   </style>
 </head>
 <body>
 
-  <!-- 헤더 -->
   <header>
     <h1>
       <span class="paw-icon">🐾</span>
-      EunSang Shelter Tech – Digital Twin Lab
+      EunSang Shelter Tech
     </h1>
-    <p>AI (ML), AR/VR, and Biometric data & Physical Products nearby your real life for next-generation Animal welfare</p>
+    <p><strong>The Simplest Way to Care for More Lives.</strong></p>
+    <div class="sub-desc">
+      You didn’t enter animal welfare to manage complicated software or stare at data points. You’re here for the animals. EunSang Shelter Tech brings you familiar, real-world products infused with quiet, gentle technology. It feels just like the traditional ways you love, but works beautifully behind the scenes to give you your time back.
+    </div>
   </header>
 
-  <!-- 기능 섹션 -->
   <section>
     <h2>🚀 Key Features</h2>
-    <ul>
-      <li><strong>Digital Twin Dashboard</strong>: Real-time health and behavior insights</li>
-    </ul>
+    
+    <div class="feature-item">
+      <h3>📋 Your Virtual Caring Assistant : "Tech That Feels Like Second Nature"</h3>
+      <p>All your animals' stories, organized beautifully in one soft glance. No spreadsheets, no confusing codes. See exactly how your animals are doing, who needs an extra hug today, and who is ready for a forever home—just like looking through your trusted daily notebook, but smarter.</p>
+    </div>
+
+    <div class="feature-item">
+      <h3>💙 Keeping Families Together</h3>
+      <p>Fewer heartbreaks, more permanent goodbyes. Our intuitive system helps you understand an animal's unique personality before they leave your doors. It gently guides you to the right family, preventing the sadness of a returned pet and keeping your staff from emotional burnout.</p>
+    </div>
+
+    <div class="feature-item">
+      <h3>🧡 Filling the Shelter's Heart & Bowls</h3>
+      <p>Warm matches that bring emotional relief. Predicting adoption timing means you can breathe easier. Know exactly how to pace your shelter's week so your staff never feels overwhelmed, and every animal gets the focused love they deserve.</p>
+    </div>
 
     <div class="model-buttons">
       <a href="https://returnratemodel-6i2mvrlijxb3mw6eopqz2k.streamlit.app/"
@@ -326,37 +356,60 @@
          class="btn btn-adoption">
         🟠 Adoption Rate Prediction
       </a>
+    </div>
 
+    <div class="feature-item" style="margin-top: 20px;">
+      <h3>🟢 A Lifetime of Support & Funding</h3>
+      <p>Turning new adoptions into ongoing care for your shelter. Finding the perfect family is just the beginning. Our simple app helps new pet parents find the exact food and supplies their new baby needs. Every time they shop, a portion of the proceeds flows right back into your shelter—creating a warm, continuous circle of funding without you asking for a single donation.</p>
+    </div>
+
+    <div class="model-buttons">
       <a href="#" 
          target="_blank" rel="noopener noreferrer"
          class="btn btn-matching">
-        🟢 Matching & eCommerce
+        🟢 Smart Matching & eCommerce
       </a>
     </div>
-
-    <ul>
-      <li><strong>AR Mode</strong>: Visualize animals in your space</li>
-      <li><strong>Vitals Monitor</strong>: Heart rate, temperature, activity level (Veterinarians)</li>
-      <li><strong>AI Insights</strong>: Mood, diet, and medical recommendations</li>
-    </ul>
   </section>
 
-  <!-- B.T. Spray System 섹션 -->
   <section>
-    <h2>📦 B.T. Spray System & ES Shelter Tech's Water Technology</h2>
+    <h2>📦 Form Factor, Smart Care & Hygiene</h2>
     
-    <!-- ✨ [업그레이드 반영] 완벽한 글로벌 커머스 스타일의 Back to Shop 카드 영역 -->
+    <div class="feature-item">
+      <h3>✨ AR Mode</h3>
+      <p><strong>Bring them home, virtually.</strong> A gentle, easy-to-use feature that lets potential families virtually see a shelter animal inside their living room, sparking an instant emotional bond.</p>
+    </div>
+
+    <div class="feature-item">
+      <h3>🩺 Shared Vet Intelligence</h3>
+      <p>Automatically connects animal heart rates and temperature with your veterinary partners for faster, smarter medical collaboration.</p>
+    </div>
+
+    <div class="feature-item">
+      <h3>💡 AI Insights</h3>
+      <p><strong>An extra set of loving eyes.</strong> Simple, automated suggestions for mood, diet, and care, tailored to each animal’s daily rhythm.</p>
+    </div>
+
     <div class="shop-card">
       <p>Smart hygiene for happier, healthier pets—and faster adoption. Find yours today.</p>
       <a href="https://pethygiene.shop/" target="_blank" rel="noopener noreferrer" class="back-to-shop-link">
-        👉 Back to Shop <span class="url-text">https://pethygiene.shop/</span>
+        👉 PetHygiene.Shop <span class="url-text">https://pethygiene.shop/</span>
       </a>
     </div>
 
-    <!-- 유튜브 비디오 플레이어 플레이스먼트 -->
     <div class="youtube-container">
-      <iframe src="https://www.youtube.com/embed/B_Mlv-tW0_k?si=Old8ZKaJzEyrUBdo" 
-              title="YouTube video player" 
+      <iframe src="https://www.youtube.com/embed/mqaXuaAUni0?si=OQiL0yw7x6x5S3Tp&amp;controls=0&amp;start=18" 
+              title="B.T. Spray System Video" 
+              frameborder="0" 
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+              referrerpolicy="strict-origin-when-cross-origin" 
+              allowfullscreen>
+      </iframe>
+    </div>
+
+    <div class="youtube-container">
+      <iframe src="https://www.youtube.com/embed/B_Mlv-tW0_k?si=w3FW4Npf5hmO4XId&amp;controls=0&amp;start=18" 
+              title="Shelter Hygiene Monitoring Video" 
               frameborder="0" 
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
               referrerpolicy="strict-origin-when-cross-origin" 
@@ -365,12 +418,21 @@
     </div>
   </section>
 
-  <!-- NDA 제출 -->
   <section>
-    <h2>🔒 NDA Submission Portal</h2>
-    <p>This system contains proprietary technologies. NDA submission is required for access.</p>
+    <h2>🔒 NDA Submission & Contact</h2>
+    <div class="cta-text-wrapper">
+      <div class="cta-lead">“Let’s Make Your Daily Rescue Work Just a Little Bit Easier.”</div>
+      <p>You don’t need to be a tech expert to bring the future into your shelter. We are looking for a small, exclusive group of dedicated shelter leaders to experience our tools first-hand—with our team holding your hand every step of the way. Let us take the heavy lifting off your shoulders so you can focus on the hearts in your care.</p>
+      <p>Call or email us today for a warm, personal chat.</p>
+    </div>
 
-    <form action="https://formspree.io/f/your-form-id" method="POST">
+    <div class="cta-buttons">
+      <a href="tel:+12522424140" class="btn btn-cta">📞 Call Us +1 252 242 4140</a>
+      <a href="mailto:eunsang.sheltertech@gmail.com" class="btn btn-cta">✉️ Send an Email to Our Team</a>
+    </div>
+
+    <form action="https://formspree.io/f/your-form-id" method="POST" style="margin-top: 15px;">
+      <p style="font-weight: 700; margin-bottom: 10px; color: #0f172a;">System Access Request Form</p>
       <label for="name">Full Name</label>
       <input type="text" id="name" name="name" required />
 
@@ -386,45 +448,42 @@
       <label for="phone">Phone Number</label>
       <input type="tel" id="phone" name="phone" />
 
-      <p><strong>📎 NDA file upload:</strong> Please send your signed NDA to  
+      <p style="font-size: 12.5px; color: #64748b; margin-bottom: 10px;"><strong>📎 NDA file upload:</strong> Please send your signed NDA to  
         <a href="mailto:eunsang.sheltertech@gmail.com">eunsang.sheltertech@gmail.com</a></p>
 
-      <button type="submit">Submit</button>
+      <button type="submit">Submit Request</button>
     </form>
   </section>
 
-  <!-- 푸터 및 SNS 멀티 채널 연동 -->
   <footer>
-    <p>
-      Contact: <a href="mailto:eunsang.sheltertech@gmail.com">eunsang.sheltertech@gmail.com</a>  
-      | Tel: +82 10 3282 5822
+    <div class="disclaimer-box">
+      <strong>A Note from Our Lab:</strong> To protect the continuous care and proprietary ideas we are building for shelters like yours, the visuals and tools shown here are presented as a warm demonstration. As we are lovingly developing this ecosystem alongside real-world caretakers, full project details can be shared personally under a gentle Non-Disclosure Agreement (NDA).
+    </div>
+
+    <p style="margin-bottom: 15px;">
+      Contact: <a href="mailto:eunsang.sheltertech@gmail.com">eunsang.sheltertech@gmail.com</a>
     </p>
 
     <div class="sns-container">
+      <a href="https://www.youtube.com/@ES_ShelterTech" target="_blank" rel="noopener noreferrer" class="sns-link link-youtube">
+        YouTube Channel
+      </a>
+
       <a href="https://www.facebook.com/waterloxusa" target="_blank" rel="noopener noreferrer" class="sns-link link-facebook-secondary">
-        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M22.675 0h-21.35C.597 0 0 .597 0 1.333v21.333C0 23.403.597 24 1.325 24H12.82V14.706h-3.13v-3.622h3.13V8.413c0-3.1 1.894-4.788 4.659-4.788 1.325 0 2.463.097 2.794.14v3.243h-1.916c-1.504 0-1.794.714-1.794 1.762v2.312h3.587l-.467 3.622h-3.12V24h6.116C23.403 24 24 23.403 24 22.667V1.333C24 .597 23.403 0 22.675 0z"/>
-        </svg>
         WaterloxUSA
       </a>
 
       <a href="https://www.facebook.com/profile.php?id=61584175715205" target="_blank" rel="noopener noreferrer" class="sns-link link-facebook-primary">
-        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M22.675 0h-21.35C.597 0 0 .597 0 1.333v21.333C0 23.403.597 24 1.325 24H12.82V14.706h-3.13v-3.622h3.13V8.413c0-3.1 1.894-4.788 4.659-4.788 1.325 0 2.463.097 2.794.14v3.243h-1.916c-1.504 0-1.794.714-1.794 1.762v2.312h3.587l-.467 3.622h-3.12V24h6.116C23.403 24 24 23.403 24 22.667V1.333C24 .597 23.403 0 22.675 0z"/>
-        </svg>
         Facebook
       </a>
 
       <a href="https://www.instagram.com/kimeunsang/" target="_blank" rel="noopener noreferrer" class="sns-link link-instagram">
-        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/>
-        </svg>
         Instagram
       </a>
     </div>
 
-    <p style="margin-top: 25px; font-size: 14px; color: #94a3b8;">
-      © 2026 EunSang Shelter Technology
+    <p style="margin-top: 25px; font-size: 12px; color: #94a3b8;">
+      © 2026 ES Shelter Tech Inc. All rights reserved.
     </p>
   </footer>
 

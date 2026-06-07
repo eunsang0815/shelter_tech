@@ -26,40 +26,44 @@
       color: #1d4ed8;
     }
 
-    /* === 헤더 (수정8: 로고 2배 확대 및 정렬 고도화) === */
+    /* === 헤더 (모바일/PC 불문 거대하고 시원한 로고 레이아웃) === */
     header {
       background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
       color: white;
       padding: 35px 24px;
-      text-align: left; /* 전체적인 균형을 위해 텍스트 기본 정렬을 왼쪽으로 변경 */
+      text-align: left;
     }
 
-    /* PC 화면에서 콘텐츠가 너무 퍼지지 않게 잡아주는 내부 컨테이너 */
     .header-container {
       max-width: 800px;
       margin: 0 auto;
     }
 
-    /* 로고 이미지와 타이틀 텍스트를 정교하게 수평 정렬하는 플렉스 박스 */
     .header-title-container {
       display: inline-flex;
       align-items: center;
-      justify-content: flex-start; /* 왼쪽으로 단정하게 밀착 정렬 */
-      gap: 20px; /* 로고와 글자 사이 간격도 시원하게 넓힘 */
+      justify-content: flex-start;
+      gap: 24px;
       max-width: 100%;
-      margin-bottom: 12px;
+      margin-bottom: 16px;
     }
 
-    /* 🛠️ 수정8 핵심: 로고 크기를 현재의 2배(65px -> 130px)로 확대 */
     .header-logo-img {
-      height: 130px; 
+      height: 160px; 
       width: auto;
       border-radius: 8px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+      flex-shrink: 0; 
+    }
+
+    .header-text-block {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
     }
 
     header h1 {
-      font-size: 2.4em;
+      font-size: 2.6em;
       font-weight: 800;
       letter-spacing: -0.03em;
       margin: 0;
@@ -69,14 +73,14 @@
 
     header p {
       font-size: 16px;
-      margin: 8px 0 0 0;
+      margin: 10px 0 0 0;
       font-weight: 600;
       color: #cbd5e1;
     }
 
     header .sub-desc {
       font-size: 13px;
-      margin: 14px 0 0 0;
+      margin: 16px 0 0 0;
       opacity: 0.85;
       line-height: 1.5;
     }
@@ -370,13 +374,13 @@
     .link-facebook-primary { color: #1877f2; }
     .link-instagram { color: #e1306c; }
 
-    /* 반응형 모바일 최적화 */
+    /* 반응형 모바일 미디어 쿼리 */
     @media (max-width: 600px) {
-      header { text-align: center; padding: 25px 16px; }
-      .header-title-container { flex-direction: column; gap: 12px; justify-content: center; }
-      .header-logo-img { height: 100px; } /* 모바일에서는 가독성을 위해 적당히 축소 */
-      header h1 { font-size: 1.8em; text-align: center; }
-      header p { font-size: 14px; }
+      header { text-align: left; padding: 25px 16px; }
+      .header-title-container { flex-direction: row; gap: 16px; justify-content: flex-start; align-items: center; }
+      .header-logo-img { height: 120px; } 
+      header h1 { font-size: 1.7em; }
+      header p { font-size: 13px; }
       section { padding: 14px 16px; margin: 8px 6px; }
       .feature-header { flex-direction: column; align-items: flex-start; gap: 4px; }
       .shop-action-row { flex-direction: column; align-items: flex-start; gap: 6px; }
@@ -388,22 +392,27 @@
 </head>
 <body>
 
+  <!-- 1. Hero Section -->
   <header>
     <div class="header-container">
       <div class="header-title-container">
         <img src="Data_Driven_ShelterTech_ES_ShelterTech_ImageLogo.png" alt="ES Vision Logo" class="header-logo-img" />
-        <h1>EunSang Shelter Tech</h1>
+        <div class="header-text-block">
+          <h1>EunSang Shelter Tech</h1>
+          <p>The Simplest Way to Care for More Lives.</p>
+        </div>
       </div>
-      <p>The Simplest Way to Care for More Lives.</p>
       <div class="sub-desc">
         You didn’t enter animal welfare to manage complicated software or stare at data points. You’re here for the animals. EunSang Shelter Tech brings you familiar, real-world products infused with quiet, gentle technology. It feels just like the traditional ways you love, but works beautifully behind the scenes to give you your time back.
       </div>
     </div>
   </header>
 
+  <!-- 2. Key Features -->
   <section>
     <h2>🚀 Key Features</h2>
     
+    <!-- 기능 1 -->
     <div class="feature-item">
       <div class="feature-header">
         <h3>📋 Your Virtual Caring Assistant : "Tech That Feels Like Second Nature"</h3>
@@ -411,6 +420,7 @@
       <p>All your animals' stories, organized beautifully in one soft glance. No spreadsheets, no confusing codes. See exactly how your animals are doing, who needs an extra hug today, and who is ready for a forever home—just like looking through your trusted daily notebook, but smarter.</p>
     </div>
 
+    <!-- 기능 2 -->
     <div class="feature-item">
       <div class="feature-header">
         <h3>💙 Keeping Families Together</h3>
@@ -423,6 +433,7 @@
       <p>Fewer heartbreaks, more permanent goodbyes. Our intuitive system helps you understand an animal's unique personality before they leave your doors. It gently guides you to the right family, preventing the sadness of a returned pet and keeping your staff from emotional burnout.</p>
     </div>
 
+    <!-- 기능 3 -->
     <div class="feature-item">
       <div class="feature-header">
         <h3>🧡 Filling the Shelter's Heart & Bowls</h3>
@@ -435,6 +446,7 @@
       <p>Warm matches that bring emotional relief. Predicting adoption timing means you can breathe easier. Know exactly how to pace your shelter's week so your staff never feels overwhelmed, and every animal gets the focused love they deserve.</p>
     </div>
 
+    <!-- 기능 4 -->
     <div class="feature-item">
       <div class="feature-header">
         <h3>🟢 A Lifetime of Support & Funding</h3>
@@ -444,8 +456,8 @@
       </div>
       <p>Turning new adoptions into ongoing care for your shelter. Finding the perfect family is just the beginning. Our simple app helps new pet parents find the exact food and supplies their new baby needs. Every time they shop, a portion of the proceeds flows right back into your shelter—creating a warm, continuous circle of funding without you asking for a single donation.</p>
       
+      <!-- 토글 히든 존 -->
       <div id="ecommerce-toggle-zone" class="toggle-content-area">
-        
         <div class="shop-premium-card">
           <div class="card-subtext">Smart hygiene for happier, healthier pets—and faster adoption. Find yours today.</div>
           <div class="shop-action-row">
@@ -467,11 +479,11 @@
             </iframe>
           </div>
         </div>
-
       </div>
     </div>
   </section>
 
+  <!-- 3. Form Factor & Smart Care -->
   <section>
     <h2>📦 Form Factor, Smart Care & Hygiene</h2>
     
@@ -513,6 +525,7 @@
     </div>
   </section>
 
+  <!-- 4. Closing CTA & NDA Portal -->
   <section>
     <h2>🔒 NDA Submission & Contact</h2>
     <div class="cta-text-wrapper">
@@ -522,6 +535,7 @@
 
     <div class="cta-buttons">
       <a href="tel:+12522424140" class="btn btn-cta">📞 Call Us +1 252 242 4140</a>
+      <!-- 🛠️ 대표님 피드백 반영: 이메일 연결 링크는 원래대로 sheltertech@pethygiene.shop 유지 -->
       <a href="mailto:sheltertech@pethygiene.shop" class="btn btn-cta">✉️ Send an Email to Our Team</a>
     </div>
 
@@ -551,20 +565,23 @@
         </div>
       </div>
 
+      <!-- 🛠️ 보여지는 텍스트는 eunsang.sheltertech@gmail.com 로 출력 (수정 9 원본 복구) -->
       <p style="font-size: 11.5px; color: #64748b; margin-top: 6px; margin-bottom: 0;"><strong>📎 NDA file upload:</strong> Please send your signed NDA to  
-        <a href="mailto:sheltertech@pethygiene.shop">sheltertech@pethygiene.shop</a></p>
+        <a href="mailto:eunsang.sheltertech@gmail.com">eunsang.sheltertech@gmail.com</a></p>
 
       <button type="submit">Submit Request</button>
     </form>
   </section>
 
+  <!-- 5. Footer & SNS Channels -->
   <footer>
     <div class="disclaimer-box">
       <strong>A Note from Our Lab:</strong> To protect the continuous care and proprietary ideas we are building for shelters like yours, the visuals and tools shown here are presented as a warm demonstration. As we are lovingly developing this ecosystem alongside real-world caretakers, full project details can be shared personally under a gentle Non-Disclosure Agreement (NDA).
     </div>
 
+    <!-- 🛠️ 보여지는 텍스트는 eunsang.sheltertech@gmail.com 로 출력 (수정 9 원본 복구) -->
     <p style="margin: 0 0 8px 0;">
-      Contact: <a href="mailto:sheltertech@pethygiene.shop">sheltertech@pethygiene.shop</a>
+      Contact: <a href="mailto:eunsang.sheltertech@gmail.com">eunsang.sheltertech@gmail.com</a>
     </p>
 
     <div class="sns-container">

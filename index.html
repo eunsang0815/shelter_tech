@@ -26,7 +26,7 @@
       color: #1d4ed8;
     }
 
-    /* === 헤더: 수정5 레이아웃 반영 === */
+    /* === 헤더 === */
     header {
       background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
       color: white;
@@ -44,6 +44,7 @@
       margin-bottom: 8px;
     }
 
+    /* 🛠️ 정확한 파일명 지정 및 크기 최적화 */
     .header-logo-img {
       height: 65px; 
       width: auto;
@@ -126,7 +127,7 @@
       font-size: 0.92em;
     }
 
-    /* === 인라인 버튼 스타일 === */
+    /* === 공통 버튼 스타일 === */
     .btn {
       display: inline-flex;
       align-items: center;
@@ -140,6 +141,8 @@
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
       transition: all 0.2s ease;
       white-space: nowrap;
+      border: none;
+      cursor: pointer;
     }
 
     .btn:hover {
@@ -150,9 +153,33 @@
 
     .btn-return { background: linear-gradient(135deg, #3b82f6, #1d4ed8); }
     .btn-adoption { background: linear-gradient(135deg, #f97316, #ea580c); }
-    .btn-matching { background: linear-gradient(135deg, #10b981, #059669); }
+    
+    /* 🛠️ 수정7: 클릭을 유도하는 인터랙티브 녹색 버튼 스타일 */
+    .btn-matching { 
+      background: linear-gradient(135deg, #10b981, #059669); 
+    }
+    .btn-matching:active {
+      transform: scale(0.98);
+    }
 
-    /* === "수정2 .GIF" 전용 쇼핑몰 배너 스타일 === */
+    /* 🛠️ 수정7 콘텐츠 전용 컨테이너 (초기 상태 숨김 처리 및 애니메이션 효과) */
+    .toggle-content-area {
+      display: none; 
+      opacity: 0;
+      max-height: 0;
+      overflow: hidden;
+      transition: opacity 0.4s ease, max-height 0.5s ease;
+      margin-top: 14px;
+      padding: 4px 0;
+    }
+
+    .toggle-content-area.show {
+      display: block;
+      opacity: 1;
+      max-height: 2000px; /* 콘텐츠가 펼쳐지도록 넉넉하게 설정 */
+    }
+
+    /* === 쇼핑몰 프리미엄 카드 === */
     .shop-premium-card {
       background: #fffcfb;
       border: 1px solid #ffe2d1;
@@ -214,7 +241,7 @@
       box-shadow: 0 4px 10px rgba(109, 40, 217, 0.3);
     }
 
-    /* === 단독 비디오 컨테이너 시스템 === */
+    /* === 동영상 컨테이너 시스템 === */
     .single-video-wrapper {
       margin: 8px 0 14px 0;
     }
@@ -361,14 +388,11 @@
 </head>
 <body>
 
-  <!-- 1. Hero Section (상단 로고 인라인 배치 헤더) -->
+  <!-- 1. Hero Section (상단 로고 지정 명칭 세팅) -->
   <header>
     <div class="header-title-container">
-      <!-- 🛠️ 8번째 수정: 로고 깨짐 방지 교체 구간 
-           실제 파일명과 완벽히 매칭되도록 아래 두 줄 중 현재 폴더에 있는 진짜 파일명의 주석(<!--)을 풀고 쓰세요! -->
-      <img src="Data_Driven_ShelterTech_ES_ShelterTech_ImageLogo_2.png" alt="ES Vision Logo" class="header-logo-img" />
-      <!-- <img src="Data_Driven_ShelterTech_ES_ShelterTech_ImageLogo.png" alt="ES Vision Logo" class="header-logo-img" /> -->
-      
+      <!-- 🛠️ 8번째 수정: 대표님이 명시해주신 정확한 로고 이미지 파일명 반영 -->
+      <img src="Data_Driven_ShelterTech_ES_ShelterTech_ImageLogo.png" alt="ES Vision Logo" class="header-logo-img" />
       <h1>EunSang Shelter Tech</h1>
     </div>
     <p>The Simplest Way to Care for More Lives.</p>
@@ -377,7 +401,7 @@
     </div>
   </header>
 
-  <!-- 2. Key Features (핵심 기능 소개 -[cite: 1] 전체 삭제 완료) -->
+  <!-- 2. Key Features -->
   <section>
     <h2>🚀 Key Features</h2>
     
@@ -419,17 +443,47 @@
     <div class="feature-item">
       <div class="feature-header">
         <h3>🟢 A Lifetime of Support & Funding</h3>
-        <a href="#" 
-           target="_blank" rel="noopener noreferrer"
-           class="btn btn-matching">
+        <!-- 🛠️ 수정7 반영: 클릭하면 하단 영역을 펼치는 인터랙티브 버튼으로 변경 -->
+        <button type="button" class="btn btn-matching" onclick="toggleEcommerceContent()">
           Smart Matching & eCommerce
-        </a>
+        </button>
       </div>
       <p>Turning new adoptions into ongoing care for your shelter. Finding the perfect family is just the beginning. Our simple app helps new pet parents find the exact food and supplies their new baby needs. Every time they shop, a portion of the proceeds flows right back into your shelter—creating a warm, continuous circle of funding without you asking for a single donation.</p>
+      
+      <!-- 🛠️ 수정7 핵심: 버튼 클릭 시 나타나는 히든 시안 영역 -->
+      <div id="ecommerce-toggle-zone" class="toggle-content-area">
+        
+        <!-- 쇼핑몰 바로가기 상단 바 -->
+        <div class="shop-premium-card">
+          <div class="card-subtext">Smart hygiene for happier, healthier pets—and faster adoption. Find yours today.</div>
+          <div class="shop-action-row">
+            <span class="back-to-shop-text">👉 Back to Shop</span>
+            <a href="https://pethygiene.shop/" target="_blank" rel="noopener noreferrer" class="purple-shop-btn">
+              Pet Hygiene . Shop
+            </a>
+          </div>
+        </div>
+
+        <!-- Faster Adoption 비디오 시스템 연동 -->
+        <div class="single-video-wrapper">
+          <div class="youtube-container">
+            <iframe src="https://www.youtube.com/embed/B_Mlv-tW0_k?si=w3FW4Npf5hmO4XId&amp;controls=0&amp;start=18" 
+                    title="Faster Adoption Pet by ES ShelterTech" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                    referrerpolicy="strict-origin-when-cross-origin" 
+                    allowfullscreen>
+            </iframe>
+          </div>
+        </div>
+
+      </div>
+      <!-- 히든 영역 끝 -->
+
     </div>
   </section>
 
-  <!-- 3. Form Factor & Smart Care (하드웨어, 위생 배너 및 비디오 섹션) -->
+  <!-- 3. Form Factor & Smart Care -->
   <section>
     <h2>📦 Form Factor, Smart Care & Hygiene</h2>
     
@@ -448,7 +502,7 @@
       <p><strong>An extra set of loving eyes.</strong> Simple, automated suggestions for mood, diet, and care, tailored to each animal’s daily rhythm.</p>
     </div>
 
-    <!-- "수정2 .GIF" 첫 번째 배너 영역 -->
+    <!-- B.T Spray 배너 영역 -->
     <div class="shop-premium-card">
       <div class="card-title">B.T. Spray System & ES Shelter Tech's Water Technology</div>
       <div class="shop-action-row">
@@ -471,30 +525,6 @@
         </iframe>
       </div>
     </div>
-
-    <!-- "수정2 .GIF" 두 번째 배너 영역 -->
-    <div class="shop-premium-card">
-      <div class="card-subtext">Smart hygiene for happier, healthier pets—and faster adoption. Find yours today.</div>
-      <div class="shop-action-row">
-        <span class="back-to-shop-text">👉 Back to Shop</span>
-        <a href="https://pethygiene.shop/" target="_blank" rel="noopener noreferrer" class="purple-shop-btn">
-          Pet Hygiene . Shop
-        </a>
-      </div>
-    </div>
-
-    <!-- 대시보드 시연용 비디오 -->
-    <div class="single-video-wrapper">
-      <div class="youtube-container">
-        <iframe src="https://www.youtube.com/embed/B_Mlv-tW0_k?si=w3FW4Npf5hmO4XId&amp;controls=0&amp;start=18" 
-                title="Shelter Hygiene Monitoring Video" 
-                frameborder="0" 
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                referrerpolicy="strict-origin-when-cross-origin" 
-                allowfullscreen>
-        </iframe>
-      </div>
-    </div>
   </section>
 
   <!-- 4. Closing CTA & NDA Portal -->
@@ -505,7 +535,6 @@
       <p>You don’t need to be a tech expert to bring the future into your shelter. We are looking for a small, exclusive group of dedicated shelter leaders to experience our tools first-hand—with our team holding your hand every step of the way. Let us take the heavy lifting off your shoulders so you can focus on the hearts in your care. Call or email us today for a warm, personal chat.</p>
     </div>
 
-    <!-- 🛠️ 7번째 수정: 이메일 전용 추적 주소 연동 완료 -->
     <div class="cta-buttons">
       <a href="tel:+12522424140" class="btn btn-cta">📞 Call Us +1 252 242 4140</a>
       <a href="mailto:sheltertech@pethygiene.shop" class="btn btn-cta">✉️ Send an Email to Our Team</a>
@@ -537,7 +566,6 @@
         </div>
       </div>
 
-      <!-- 🛠️ 7번째 수정: NDA 안내 문구 이메일 주소 전용 주소로 교체 -->
       <p style="font-size: 11.5px; color: #64748b; margin-top: 6px; margin-bottom: 0;"><strong>📎 NDA file upload:</strong> Please send your signed NDA to  
         <a href="mailto:sheltertech@pethygiene.shop">sheltertech@pethygiene.shop</a></p>
 
@@ -551,7 +579,6 @@
       <strong>A Note from Our Lab:</strong> To protect the continuous care and proprietary ideas we are building for shelters like yours, the visuals and tools shown here are presented as a warm demonstration. As we are lovingly developing this ecosystem alongside real-world caretakers, full project details can be shared personally under a gentle Non-Disclosure Agreement (NDA).
     </div>
 
-    <!-- 🛠️ 7번째 수정: 하드코딩된 푸터 연락처 메일 주소 변경 -->
     <p style="margin: 0 0 8px 0;">
       Contact: <a href="mailto:sheltertech@pethygiene.shop">sheltertech@pethygiene.shop</a>
     </p>
@@ -560,15 +587,12 @@
       <a href="https://www.youtube.com/@ES_ShelterTech" target="_blank" rel="noopener noreferrer" class="sns-link link-youtube">
         YouTube Channel
       </a>
-
       <a href="https://www.facebook.com/waterloxusa" target="_blank" rel="noopener noreferrer" class="sns-link link-facebook-secondary">
         WaterloxUSA
       </a>
-
       <a href="https://www.facebook.com/profile.php?id=61584175715205" target="_blank" rel="noopener noreferrer" class="sns-link link-facebook-primary">
         Facebook
       </a>
-
       <a href="https://www.instagram.com/kimeunsang/" target="_blank" rel="noopener noreferrer" class="sns-link link-instagram">
         Instagram
       </a>
@@ -578,6 +602,18 @@
       © 2026 ES Shelter Tech Inc. All rights reserved.
     </p>
   </footer>
+
+  <!-- 🛠️ 수정7 구동을 위한 자바스크립트 엔진 인터랙션 추가 -->
+  <script>
+    function toggleEcommerceContent() {
+      var targetZone = document.getElementById('ecommerce-toggle-zone');
+      if (targetZone.classList.contains('show')) {
+        targetZone.classList.remove('show');
+      } else {
+        targetZone.classList.add('show');
+      }
+    }
+  </script>
 
 </body>
 </html>
